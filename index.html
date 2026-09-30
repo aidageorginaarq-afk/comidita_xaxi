@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FitMeal Coach & Recomposición Deportiva</title>
+  <title>FitMeal Híbrido • Recomposición y Meal Prep</title>
   
-  <!-- Web App & Mobile Status Bar Settings -->
   <meta name="theme-color" content="#C25E3E">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="FitMeal">
   
-  <!-- Embedded High-Definition SVG Web App Icon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23C25E3E'/%3E%3Cpath d='M30 25 v25 c0 8 6 14 14 14 v18 h12 v-18 c8 0 14-6 14-14 v-25 h-8 v22 c0 4-3 7-7 7 s-7-3-7-7 v-22 h-6 v22 c0 4-3 7-7 7 s-7-3-7-7 v-22 z' fill='white'/%3E%3Ccircle cx='76' cy='32' r='6' fill='%2310B981'/%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23C25E3E'/%3E%3Cpath d='M30 25 v25 c0 8 6 14 14 14 v18 h12 v-18 c8 0 14-6 14-14 v-25 h-8 v22 c0 4-3 7-7 7 s-7-3-7-7 v-22 h-6 v22 c0 4-3 7-7 7 s-7-3-7-7 v-22 z' fill='white'/%3E%3Ccircle cx='76' cy='32' r='6' fill='%2310B981'/%3E%3C/svg%3E">
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome 6 Icons CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Editorial Serif + Modern Clean Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,60 +35,26 @@
   </script>
 
   <style>
-    body {
-      transition: background-color 0.2s ease, color 0.2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
+    body { transition: background-color 0.2s ease, color 0.2s ease; -webkit-tap-highlight-color: transparent; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.35); border-radius: 9999px; }
 
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(16, 185, 129, 0.35);
-      border-radius: 9999px;
-    }
-
-    /* Theme 1: Warm Kitchen (Recetario Cálido / Lino y Terracota) */
+    /* Themes */
     html[data-theme="kitchen"] body {
-      --bg-main: #F5EFEB;
-      --bg-surface: #FFFFFF;
-      --bg-card: #FAF6F1;
-      --border-color: #E3D6C8;
-      --text-primary: #2B1D16;
-      --text-secondary: #705B4E;
-      --accent: #C25E3E;
-      --accent-badge: #FBECE7;
-      --font-family-heading: 'Playfair Display', Georgia, serif;
+      --bg-main: #F5EFEB; --bg-surface: #FFFFFF; --bg-card: #FAF6F1;
+      --border-color: #E3D6C8; --text-primary: #2B1D16; --text-secondary: #705B4E;
+      --accent: #C25E3E; --font-family-heading: 'Playfair Display', Georgia, serif;
     }
-
-    /* Theme 2: Clean White (Mucha Luz / Diurno Clínico) */
     html[data-theme="light"] body {
-      --bg-main: #F8FAFC;
-      --bg-surface: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --border-color: #E2E8F0;
-      --text-primary: #0F172A;
-      --text-secondary: #475569;
-      --accent: #059669;
-      --accent-badge: #E6F7F0;
-      --font-family-heading: 'Plus Jakarta Sans', sans-serif;
+      --bg-main: #F8FAFC; --bg-surface: #FFFFFF; --bg-card: #FFFFFF;
+      --border-color: #E2E8F0; --text-primary: #0F172A; --text-secondary: #475569;
+      --accent: #059669; --font-family-heading: 'Plus Jakarta Sans', sans-serif;
     }
-
-    /* Theme 3: Dark Slate (Poca Luz / Noche Deportiva) */
     html[data-theme="dark"] body {
-      --bg-main: #0B1120;
-      --bg-surface: #1E293B;
-      --bg-card: #131E32;
-      --border-color: #334155;
-      --text-primary: #F8FAFC;
-      --text-secondary: #94A3B8;
-      --accent: #10B981;
-      --accent-badge: rgba(16, 185, 129, 0.15);
-      --font-family-heading: 'Plus Jakarta Sans', sans-serif;
+      --bg-main: #0B1120; --bg-surface: #1E293B; --bg-card: #131E32;
+      --border-color: #334155; --text-primary: #F8FAFC; --text-secondary: #94A3B8;
+      --accent: #10B981; --font-family-heading: 'Plus Jakarta Sans', sans-serif;
     }
 
     .theme-bg { background-color: var(--bg-main); }
@@ -103,1569 +64,541 @@
     .theme-text { color: var(--text-primary); }
     .theme-text-sub { color: var(--text-secondary); }
     .theme-heading-font { font-family: var(--font-family-heading); }
-    .theme-accent { color: var(--accent); }
-    .theme-accent-bg { background-color: var(--accent); }
   </style>
 </head>
-<body class="theme-bg theme-text min-h-full flex flex-col font-sans antialiased select-none sm:select-auto">
+<body class="theme-bg theme-text min-h-full flex flex-col font-sans antialiased">
 
+  <!-- Header -->
   <header class="theme-surface border-b theme-border sticky top-0 z-40 shadow-xs backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      
-      <!-- Brand & Title -->
-      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('week')">
-        <div id="brand-icon" class="w-10 h-10 rounded-xl bg-[#C25E3E] text-white flex items-center justify-center shadow-md text-lg transition">
-          <i class="fa-solid fa-utensils"></i>
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="window.switchTab('week')">
+        <div class="w-10 h-10 rounded-xl bg-[#C25E3E] text-white flex items-center justify-center shadow-md text-lg">
+          <i class="fa-solid fa-fire-flame-curved"></i>
         </div>
         <div>
           <h1 class="text-base font-extrabold tracking-tight theme-text flex items-center gap-2 theme-heading-font">
-            FitMeal <span id="app-badge" class="text-[11px] px-2 py-0.5 rounded-full bg-[#FBECE7] text-[#C25E3E] font-bold border border-[#F3C4B6]">Porciones & Prep</span>
+            FitMeal <span class="text-[11px] px-2 py-0.5 rounded-full bg-[#FBECE7] text-[#C25E3E] font-bold border border-[#F3C4B6]">Atleta Híbrido</span>
           </h1>
-          <p class="text-xs theme-text-sub">Control de porciones, recomposición deportiva y ahorro</p>
+          <p class="text-[11px] theme-text-sub">Fuerza, Cardio, Nutrición y Caprichos</p>
         </div>
       </div>
 
-      <!-- Action Cluster: Tutorial + Visual Theme + Day Mode -->
       <div class="flex items-center flex-wrap gap-2.5">
-        
-        <!-- Tutorial Button -->
-        <button type="button" onclick="openModal('tutorial-modal')" title="¿Cómo usar la app?" class="theme-card p-2 rounded-xl border theme-border shadow-xs text-xs font-bold flex items-center gap-1.5 hover:border-emerald-500 transition active:scale-95">
-          <i class="fa-solid fa-circle-question text-emerald-600 text-sm"></i>
-          <span class="hidden sm:inline">¿Cómo usar?</span>
+        <button type="button" onclick="window.openModal('equivalents-modal')" class="theme-card px-2.5 py-1.5 rounded-xl border theme-border shadow-xs text-xs font-bold flex items-center gap-1.5 hover:border-emerald-500 transition active:scale-95">
+          <i class="fa-solid fa-scale-balanced text-teal-600"></i> <span class="hidden sm:inline">Porciones SMAE</span>
         </button>
 
-        <!-- Visual Atmosphere Theme Selector -->
         <div class="flex items-center theme-card p-1 rounded-xl border theme-border shadow-xs text-xs font-semibold">
-          <button type="button" onclick="setTheme('kitchen')" id="theme-btn-kitchen" title="Modo Recetario Cálido" class="px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition font-bold bg-[#EADCCE] text-[#7A3622]">
-            <i class="fa-solid fa-book-open"></i>
-            <span class="hidden sm:inline">Recetario</span>
-          </button>
-          <button type="button" onclick="setTheme('light')" id="theme-btn-light" title="Modo Mucha Luz (Diurno)" class="px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition theme-text-sub hover:theme-text">
-            <i class="fa-solid fa-sun"></i>
-            <span class="hidden sm:inline">Mucha Luz</span>
-          </button>
-          <button type="button" onclick="setTheme('dark')" id="theme-btn-dark" title="Modo Poca Luz (Noche)" class="px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition theme-text-sub hover:theme-text">
-            <i class="fa-solid fa-moon"></i>
-            <span class="hidden sm:inline">Poca Luz</span>
-          </button>
+          <button type="button" onclick="window.setTheme('kitchen')" id="theme-btn-kitchen" class="px-2 py-1.5 rounded-lg flex items-center gap-1.5 transition"><i class="fa-solid fa-book-open"></i></button>
+          <button type="button" onclick="window.setTheme('light')" id="theme-btn-light" class="px-2 py-1.5 rounded-lg flex items-center gap-1.5 transition"><i class="fa-solid fa-sun"></i></button>
+          <button type="button" onclick="window.setTheme('dark')" id="theme-btn-dark" class="px-2 py-1.5 rounded-lg flex items-center gap-1.5 transition"><i class="fa-solid fa-moon"></i></button>
         </div>
-
-        <!-- Quick Day Goal Toggle -->
-        <div class="flex items-center theme-card p-1 rounded-xl border theme-border shadow-xs text-xs">
-          <button type="button" id="mode-gym-btn" onclick="setDayMode('gym')" class="px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5 bg-emerald-600 text-white shadow-xs">
-            <i class="fa-solid fa-dumbbell"></i>
-            <span>Día Gym</span>
-          </button>
-          <button type="button" id="mode-rest-btn" onclick="setDayMode('rest')" class="px-3 py-1.5 rounded-lg font-medium theme-text-sub hover:theme-text transition flex items-center gap-1.5">
-            <i class="fa-solid fa-bed"></i>
-            <span>Descanso</span>
-          </button>
-        </div>
-
       </div>
     </div>
   </header>
 
+  <!-- Navigation -->
   <nav class="theme-surface border-b theme-border sticky top-[57px] z-30 shadow-xs">
     <div class="max-w-6xl mx-auto px-4 flex items-center justify-between overflow-x-auto scrollbar-none">
       <div class="flex space-x-6 text-sm font-semibold">
-        <button type="button" onclick="switchTab('week')" id="tab-btn-week" class="py-3 border-b-2 border-emerald-500 text-emerald-600 font-bold flex items-center gap-2 transition whitespace-nowrap">
-          <i class="fa-regular fa-calendar-days text-base"></i> Mi Menú Semanal
+        <button type="button" onclick="window.switchTab('week')" id="tab-btn-week" class="py-3 border-b-2 border-emerald-500 text-emerald-600 font-bold flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-regular fa-calendar-days"></i> Mi Semana
         </button>
-        <button type="button" onclick="switchTab('generator')" id="tab-btn-generator" class="py-3 border-b-2 border-transparent theme-text-sub hover:theme-text flex items-center gap-2 transition whitespace-nowrap font-medium">
-          <i class="fa-solid fa-carrot text-base"></i> Armar con Despensa
+        <button type="button" onclick="window.switchTab('generator')" id="tab-btn-generator" class="py-3 border-b-2 border-transparent theme-text-sub flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-utensils"></i> Recetas & Despensa
         </button>
-        <button type="button" onclick="switchTab('mealprep')" id="tab-btn-mealprep" class="py-3 border-b-2 border-transparent theme-text-sub hover:theme-text flex items-center gap-2 transition whitespace-nowrap font-medium">
-          <i class="fa-solid fa-boxes-stacked text-base"></i> Sistema Lego (Bases)
+        <button type="button" onclick="window.switchTab('mealprep')" id="tab-btn-mealprep" class="py-3 border-b-2 border-transparent theme-text-sub flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-boxes-stacked"></i> Sistema Lego
         </button>
-        <button type="button" onclick="switchTab('shopping')" id="tab-btn-shopping" class="py-3 border-b-2 border-transparent theme-text-sub hover:theme-text flex items-center gap-2 transition whitespace-nowrap font-medium">
-          <i class="fa-solid fa-cart-shopping text-base"></i> Compras Mercado
+        <button type="button" onclick="window.switchTab('shopping')" id="tab-btn-shopping" class="py-3 border-b-2 border-transparent theme-text-sub flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-cart-shopping"></i> Compras
         </button>
-        <button type="button" onclick="switchTab('custom-ai')" id="tab-btn-custom-ai" class="py-3 border-b-2 border-transparent theme-text-sub hover:theme-text flex items-center gap-2 transition whitespace-nowrap font-medium">
-          <i class="fa-solid fa-wand-magic-sparkles text-base"></i> Asesor Despensa
+        <button type="button" onclick="window.switchTab('custom-ai')" id="tab-btn-custom-ai" class="py-3 border-b-2 border-transparent theme-text-sub flex items-center gap-2 whitespace-nowrap">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Asesor Antojos
         </button>
       </div>
-
-      <!-- Quick Full-Week Summary Action -->
-      <button type="button" onclick="openModal('full-week-modal')" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold theme-card border theme-border hover:border-emerald-500 transition shrink-0 my-2 shadow-xs active:scale-95">
-        <i class="fa-solid fa-table-list text-emerald-500"></i>
-        <span>Ver Resumen Semanal</span>
-      </button>
     </div>
   </nav>
 
+  <!-- Main Content -->
   <main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 space-y-6">
 
-    <!-- Porciones Guía Rápida & Objetivo -->
-    <div id="objective-banner" class="theme-card border theme-border rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xs relative overflow-hidden">
-      <div class="space-y-1.5 z-10">
-        <div class="flex items-center gap-2">
-          <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-extrabold bg-emerald-500/15 text-emerald-600 border border-emerald-500/25">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-ping"></span>
-            <span id="banner-tag">MODO GIMNASIO ACTIVO</span>
-          </span>
-          <span class="text-xs theme-text-sub font-medium">Recomposición: Quemar grasa manteniendo músculo</span>
-        </div>
+    <!-- 4-Level Hybrid Banner -->
+    <div id="objective-banner" class="theme-card border theme-border rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row gap-4 shadow-xs">
+      <div class="flex-1 space-y-2">
+        <span id="banner-tag" class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-pink-500/15 text-pink-600 border border-pink-500/25">
+          <i class="fa-solid fa-fire mr-1.5"></i> Nivel 1: Gym Pesado (Pierna)
+        </span>
         <h2 id="banner-title" class="text-base sm:text-lg font-bold theme-text theme-heading-font">
-          Porciones altas de proteína con carbohidratos funcionales
+          Sobrecarga de Carbohidratos y Premio Muscular
         </h2>
-        <p id="banner-desc" class="text-xs sm:text-sm theme-text-sub max-w-2xl leading-relaxed">
-          Cada plato te indica cuántas porciones de palma (proteína), puño (carbos) y plato verde (verduras) estás consumiendo para comer con total consciencia.
+        <p id="banner-desc" class="text-xs sm:text-sm theme-text-sub leading-relaxed">
+          Las fibras grandes exigen energía real. Aquí entran la avena, el arroz, los chilaquiles y tu Helado Cremoso de Cacao Post-Gym.
         </p>
       </div>
-
-      <!-- Equivalencias de Porciones Visuales -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-2 gap-2 text-xs font-medium theme-surface p-3 rounded-xl border theme-border shrink-0 z-10 w-full md:w-auto">
-        <div class="flex items-center gap-2">
-          <span class="text-base">🍗</span>
-          <div>
-            <strong class="block text-[11px] theme-text">Proteína</strong>
-            <span class="text-[10px] theme-text-sub">1 porción = 1 palma</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-base">🍚</span>
-          <div>
-            <strong class="block text-[11px] theme-text">Carbohidrato</strong>
-            <span class="text-[10px] theme-text-sub">1 porción = 1 puño</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-base">🥗</span>
-          <div>
-            <strong class="block text-[11px] theme-text">Verdura</strong>
-            <span class="text-[10px] theme-text-sub">1 porción = 1 taza</span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-base">🥑</span>
-          <div>
-            <strong class="block text-[11px] theme-text">Grasa Sana</strong>
-            <span class="text-[10px] theme-text-sub">1 porción = 1 pulgar</span>
-          </div>
-        </div>
+      
+      <!-- Quick Level Filters for testing the DB -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 shrink-0">
+        <button type="button" onclick="window.setGlobalLevel('heavy')" id="lvl-heavy" class="p-2 rounded-xl border border-pink-500 bg-pink-500/10 text-left transition active:scale-95">
+          <span class="block text-base">🏋️‍♀️</span>
+          <span class="block text-[10px] font-bold text-pink-600 mt-1">Gym Pesado</span>
+        </button>
+        <button type="button" onclick="window.setGlobalLevel('normal')" id="lvl-normal" class="p-2 rounded-xl border theme-border theme-surface text-left transition active:scale-95">
+          <span class="block text-base">💪</span>
+          <span class="block text-[10px] font-bold text-indigo-600 mt-1">Gym Torso</span>
+        </button>
+        <button type="button" onclick="window.setGlobalLevel('cardio')" id="lvl-cardio" class="p-2 rounded-xl border theme-border theme-surface text-left transition active:scale-95">
+          <span class="block text-base">🚴‍♀️</span>
+          <span class="block text-[10px] font-bold text-amber-600 mt-1">Cardio</span>
+        </button>
+        <button type="button" onclick="window.setGlobalLevel('rest')" id="lvl-rest" class="p-2 rounded-xl border theme-border theme-surface text-left transition active:scale-95">
+          <span class="block text-base">🛋️</span>
+          <span class="block text-[10px] font-bold text-teal-600 mt-1">Descanso</span>
+        </button>
       </div>
     </div>
 
+    <!-- TAB 1: WEEK VIEW -->
     <section id="tab-week" class="space-y-6">
-      
-      <!-- Week Header & Actions -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h3 class="text-lg font-bold theme-text theme-heading-font flex items-center gap-2">
-            <i class="fa-regular fa-calendar-check text-emerald-600"></i> Mi Menú Semanal (Lunes a Domingo)
-          </h3>
-          <p class="text-xs theme-text-sub">
-            Aquí ves exactamente cómo quedó tu semana completa. Toca cualquier plato para ver sus porciones e ingredientes.
-          </p>
+          <h3 class="text-lg font-bold theme-text theme-heading-font"><i class="fa-regular fa-calendar-check text-emerald-600"></i> Tu Semana Híbrida</h3>
+          <p class="text-xs theme-text-sub">Toca el botón de cada día para rotar entre los 4 niveles (Pesado > Torso > Cardio > Descanso).</p>
         </div>
-        <div class="flex items-center flex-wrap gap-2 shrink-0">
-          <button type="button" onclick="openModal('full-week-modal')" class="px-3 py-2 rounded-xl text-xs font-bold theme-surface border theme-border hover:border-emerald-500 transition flex items-center gap-1.5 shadow-xs active:scale-95">
-            <i class="fa-solid fa-table text-emerald-600"></i> Ver Tabla Completa
-          </button>
-          <button type="button" onclick="autoFillWeek('balanced')" class="px-3 py-2 rounded-xl text-xs font-bold theme-surface border theme-border hover:border-emerald-500 transition flex items-center gap-1.5 shadow-xs active:scale-95">
-            <i class="fa-solid fa-shuffle theme-accent"></i> Sugerir 4 Gym / 3 Descanso
-          </button>
-          <button type="button" onclick="syncWeekToShopping()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition flex items-center gap-1.5 shadow-sm active:scale-95">
-            <i class="fa-solid fa-cart-arrow-down"></i> Sincronizar Súper
-          </button>
+        <div class="flex gap-2 shrink-0">
+          <button type="button" onclick="window.openModal('full-week-modal')" class="px-3 py-2 rounded-xl text-xs font-bold theme-surface border theme-border hover:border-emerald-500 shadow-xs"><i class="fa-solid fa-table"></i> Resumen</button>
+          <button type="button" onclick="window.autoFillWeek('hybrid')" class="px-3 py-2 rounded-xl text-xs font-bold theme-surface border theme-border hover:border-emerald-500 shadow-xs"><i class="fa-solid fa-shuffle theme-accent"></i> Sugerir Semana</button>
         </div>
       </div>
 
-      <!-- Weekly Stats Pills -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="theme-card p-3 rounded-xl border theme-border">
-          <span class="text-[11px] theme-text-sub block font-medium">Días de Gym</span>
-          <span class="text-xl font-extrabold text-emerald-600" id="week-count-gym">4 días</span>
-          <span class="text-[10px] theme-text-sub block mt-0.5">Carbos funcionales</span>
-        </div>
-        <div class="theme-card p-3 rounded-xl border theme-border">
-          <span class="text-[11px] theme-text-sub block font-medium">Días de Descanso</span>
-          <span class="text-xl font-extrabold text-teal-600" id="week-count-rest">3 días</span>
-          <span class="text-[10px] theme-text-sub block mt-0.5">Quema y saciedad verde</span>
-        </div>
-        <div class="theme-card p-3 rounded-xl border theme-border">
-          <span class="text-[11px] theme-text-sub block font-medium">Costo Total Comidas</span>
-          <span class="text-xl font-extrabold text-amber-600" id="week-est-cost">~$390 MXN</span>
-          <span class="text-[10px] theme-text-sub block mt-0.5">14 comidas completas</span>
-        </div>
-        <div class="theme-card p-3 rounded-xl border theme-border">
-          <span class="text-[11px] theme-text-sub block font-medium">Tiempo de Cocina</span>
-          <span class="text-xl font-extrabold theme-text">1h 20 min</span>
-          <span class="text-[10px] theme-text-sub block mt-0.5">En 1 sola sesión de batch</span>
-        </div>
-      </div>
-
-      <!-- 7 Days Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="week-cards-grid">
-        <!-- Generado dinámicamente -->
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4" id="week-cards-grid"></div>
     </section>
 
+    <!-- TAB 2: PANTRY & RECIPES -->
     <section id="tab-generator" class="space-y-6 hidden">
       <div class="theme-card border theme-border rounded-2xl p-5 shadow-xs">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-          <div>
-            <h3 class="text-base font-bold theme-text theme-heading-font flex items-center gap-2">
-              <i class="fa-solid fa-carrot text-emerald-600"></i> ¿Qué tienes en tu despensa o refri hoy?
-            </h3>
-            <p class="text-xs theme-text-sub">Marca lo que tienes listo o a la mano; filtraremos solo lo que puedes cocinar ya.</p>
-          </div>
+          <h3 class="text-base font-bold theme-text theme-heading-font"><i class="fa-solid fa-carrot text-emerald-600"></i> Tu Despensa</h3>
           <div class="flex gap-2">
-            <button type="button" onclick="selectAllIngredients(true)" class="text-xs font-semibold px-2.5 py-1 rounded-lg theme-surface border theme-border hover:border-emerald-500 transition active:scale-95">Marcar todos</button>
-            <button type="button" onclick="selectAllIngredients(false)" class="text-xs font-semibold px-2.5 py-1 rounded-lg theme-surface border theme-border hover:border-slate-500 transition active:scale-95">Limpiar</button>
+            <button type="button" onclick="window.selectAllIngredients(true)" class="text-xs font-semibold px-2.5 py-1 rounded-lg theme-surface border theme-border">Marcar todos</button>
+            <button type="button" onclick="window.selectAllIngredients(false)" class="text-xs font-semibold px-2.5 py-1 rounded-lg theme-surface border theme-border">Limpiar</button>
           </div>
         </div>
-
         <div class="space-y-4">
-          <div>
-            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-2">Proteínas Económicas y Rendidoras</span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5" id="pantry-proteins"></div>
-          </div>
-
-          <div>
-            <span class="text-xs font-bold text-teal-600 uppercase tracking-wider block mb-2">Carbohidratos & Combustible Deportivo</span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5" id="pantry-carbs"></div>
-          </div>
-
-          <div>
-            <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-2">Volumen Verde & Saciedad</span>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5" id="pantry-greens"></div>
-          </div>
+          <div><span class="text-xs font-bold text-emerald-600 block mb-2">PROTEÍNAS (AOA)</span><div class="grid grid-cols-1 sm:grid-cols-4 gap-2" id="pantry-proteins"></div></div>
+          <div><span class="text-xs font-bold text-teal-600 block mb-2">CEREALES & CARBOS</span><div class="grid grid-cols-1 sm:grid-cols-4 gap-2" id="pantry-carbs"></div></div>
+          <div><span class="text-xs font-bold text-amber-600 block mb-2">VERDURAS</span><div class="grid grid-cols-1 sm:grid-cols-4 gap-2" id="pantry-greens"></div></div>
+          <div><span class="text-xs font-bold text-pink-600 block mb-2">POSTRES & BASES</span><div class="grid grid-cols-1 sm:grid-cols-4 gap-2" id="pantry-treats"></div></div>
         </div>
       </div>
 
-      <!-- Suggested Meals Container -->
-      <div class="space-y-4">
-        <div class="flex items-center justify-between">
-          <h3 class="text-base font-bold theme-text theme-heading-font flex items-center gap-2">
-            <i class="fa-solid fa-plate-wheat text-emerald-600"></i> Platillos Sugeridos con tus Porciones
-            <span id="meal-count-badge" class="ml-2 text-xs font-semibold px-2.5 py-0.5 rounded-full theme-surface text-emerald-600 border theme-border">0 disponibles</span>
-          </h3>
-          <span class="text-xs theme-text-sub hidden sm:inline"><i class="fa-solid fa-stopwatch mr-1"></i>Armables en &lt; 5 min con tu batch prep</span>
-        </div>
-
-        <div id="meals-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-bold theme-text theme-heading-font"><i class="fa-solid fa-plate-wheat text-emerald-600"></i> Platillos que puedes armar</h3>
       </div>
+      <div id="meals-container" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
     </section>
 
+    <!-- TAB 3: SYSTEM LEGO -->
     <section id="tab-mealprep" class="space-y-6 hidden">
-      <div class="theme-card border theme-border rounded-2xl p-5 sm:p-6 shadow-xs">
-        <div class="max-w-3xl">
-          <h3 class="text-lg font-bold theme-text theme-heading-font flex items-center gap-2 mb-2">
-            <i class="fa-solid fa-cubes text-emerald-600"></i> La Filosofía del Prep "Tipo Lego"
-          </h3>
-          <p class="text-sm theme-text-sub leading-relaxed">
-            No cocines platillos cerrados que te aburran al tercer día. Cocina <strong>3 cajas base en volumen</strong> el fin de semana. Con eso combinas 6 comidas diferentes sin comer lo mismo todos los días.
-          </p>
-        </div>
-
-        <!-- 3 Pillars Grid -->
+      <div class="theme-card border theme-border rounded-2xl p-5 shadow-xs">
+        <h3 class="text-lg font-bold theme-text theme-heading-font mb-2">Sistema Lego para Atletas</h3>
+        <p class="text-sm theme-text-sub">Cocina 3 cajas el domingo en 1h 20m. Úsalas toda la semana variando la porción de carbohidratos según tu tipo de entrenamiento.</p>
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          <div class="theme-surface p-4 rounded-xl border theme-border flex flex-col justify-between">
-            <div>
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-600 flex items-center justify-center font-bold mb-3">1</div>
-              <h4 class="font-bold theme-text text-sm mb-1 theme-heading-font">Caja Proteica Base</h4>
-              <p class="text-xs theme-text-sub mb-3">1.2 a 1.5 kg de proteína sazonada pero versátil.</p>
-              <ul class="text-xs theme-text space-y-1.5 list-disc list-inside">
-                <li>Pechuga deshebrada al laurel y ajo.</li>
-                <li>Molida de res con verdura picada (rinde el doble).</li>
-                <li>Muslo de pollo a la plancha en fajitas.</li>
-              </ul>
-            </div>
-            <div class="mt-4 pt-3 border-t theme-border text-[11px] text-emerald-600 font-medium">
-              <i class="fa-regular fa-snowflake mr-1"></i> Se refrigera 4 días o congela en porciones.
-            </div>
+          <div class="theme-surface p-4 rounded-xl border theme-border">
+            <div class="text-emerald-600 font-bold mb-2">1. Caja Proteica (AOA)</div>
+            <p class="text-xs theme-text-sub">Pollo deshebrado, carne molida o fajitas. Usa 2 a 3 porciones en días de cardio, y 4 a 5 porciones en días de pesas.</p>
           </div>
-
-          <div class="theme-surface p-4 rounded-xl border theme-border flex flex-col justify-between">
-            <div>
-              <div class="w-8 h-8 rounded-lg bg-teal-500/15 text-teal-600 flex items-center justify-center font-bold mb-3">2</div>
-              <h4 class="font-bold theme-text text-sm mb-1 theme-heading-font">Caja de Combustible (Carbos)</h4>
-              <p class="text-xs theme-text-sub mb-3">Tu energía para levantar fuerte en el gym.</p>
-              <ul class="text-xs theme-text space-y-1.5 list-disc list-inside">
-                <li>Arroz al vapor con toque de ajo (rinde toda la semana).</li>
-                <li>Frijoles negros de olla bien sazonados.</li>
-                <li>Papas en cubos cocidas con paprika.</li>
-              </ul>
-            </div>
-            <div class="mt-4 pt-3 border-t theme-border text-[11px] text-teal-600 font-medium">
-              <i class="fa-solid fa-fire mr-1"></i> Abundante en días de gym, reducido en descanso.
-            </div>
+          <div class="theme-surface p-4 rounded-xl border theme-border">
+            <div class="text-teal-600 font-bold mb-2">2. Caja de Energía (Carbos)</div>
+            <p class="text-xs theme-text-sub">Arroz o papa. Sírvete 3 puños el día de pierna, 2 puños el día de brazo, y evítalos el día de descanso total.</p>
           </div>
-
-          <div class="theme-surface p-4 rounded-xl border theme-border flex flex-col justify-between">
-            <div>
-              <div class="w-8 h-8 rounded-lg bg-amber-500/15 text-amber-600 flex items-center justify-center font-bold mb-3">3</div>
-              <h4 class="font-bold theme-text text-sm mb-1 theme-heading-font">Caja de Volumen & Saciedad</h4>
-              <p class="text-xs theme-text-sub mb-3">Verduras de bajo costo que llenan el plato sin calorías.</p>
-              <ul class="text-xs theme-text space-y-1.5 list-disc list-inside">
-                <li>Calabacitas salteadas en cubitos con cebolla.</li>
-                <li>Nopales cocidos con orégano y sal.</li>
-                <li>Pico de gallo fresco (jitomate, cebolla, cilantro).</li>
-              </ul>
-            </div>
-            <div class="mt-4 pt-3 border-t theme-border text-[11px] text-amber-600 font-medium">
-              <i class="fa-solid fa-leaf mr-1"></i> Llena el 50% de tu plato sin sumar calorías.
-            </div>
+          <div class="theme-surface p-4 rounded-xl border theme-border">
+            <div class="text-pink-600 font-bold mb-2">3. Congelador Caprichos</div>
+            <p class="text-xs theme-text-sub">Rodajas de plátano congelado y cacao puro. Licúa en 2 minutos post-gym pesado para recuperar el músculo con sabor a helado.</p>
           </div>
-        </div>
-
-        <div class="mt-6 p-4 rounded-xl theme-surface border theme-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-500/15 text-emerald-600 flex items-center justify-center shrink-0">
-              <i class="fa-solid fa-bowl-food text-lg"></i>
-            </div>
-            <div>
-              <h5 class="text-sm font-bold theme-text theme-heading-font">Regla de Oro de Ensamblaje</h5>
-              <p class="text-xs theme-text-sub">2 palmas de proteína + 1 o 2 puños de carbos (según gym) + 2 tazas de verdura + salsa casera = Listo en 3 minutos.</p>
-            </div>
-          </div>
-          <button type="button" onclick="switchTab('generator')" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shrink-0 transition active:scale-95">
-            Ver platos combinables
-          </button>
         </div>
       </div>
     </section>
 
+    <!-- TAB 4: SHOPPING -->
     <section id="tab-shopping" class="space-y-6 hidden">
       <div class="theme-card border theme-border rounded-2xl p-5 shadow-xs">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b theme-border">
-          <div>
-            <h3 class="text-base font-bold theme-text theme-heading-font flex items-center gap-2">
-              <i class="fa-solid fa-calculator text-emerald-600"></i> Calculadora de Compras para Meal Prep
-            </h3>
-            <p class="text-xs theme-text-sub">Cantidades calculadas a partir de tus días de entrenamiento y descanso seleccionados.</p>
-          </div>
-          <div class="flex items-center gap-3">
-            <label class="text-xs theme-text-sub font-medium">Días a cubrir:</label>
-            <select id="prep-days" onchange="calculateShoppingList()" class="theme-surface border theme-border rounded-lg px-3 py-1.5 text-xs font-bold text-emerald-600 focus:outline-none">
-              <option value="4">4 días (Lunes a Jueves)</option>
-              <option value="5">5 días (Lunes a Viernes)</option>
-              <option value="7" selected>7 días (Semana completa)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
-          <div class="theme-surface p-4 rounded-xl border theme-border">
-            <span class="text-xs theme-text-sub block mb-1 font-medium">Costo Estimado Total</span>
-            <span class="text-xl sm:text-2xl font-extrabold text-emerald-600" id="shop-total-cost">$310 - $390 MXN</span>
-            <span class="text-[11px] theme-text-sub block mt-1">Supermercado o mercado local</span>
-          </div>
-          <div class="theme-surface p-4 rounded-xl border theme-border">
-            <span class="text-xs theme-text-sub block mb-1 font-medium">Costo por comida principal</span>
-            <span class="text-xl sm:text-2xl font-extrabold text-teal-600" id="shop-cost-per-meal">~$34 MXN</span>
-            <span class="text-[11px] theme-text-sub block mt-1">Vs $120+ en comida rápida / apps</span>
-          </div>
-          <div class="theme-surface p-4 rounded-xl border theme-border">
-            <span class="text-xs theme-text-sub block mb-1 font-medium">Proteína diaria asegurada</span>
-            <span class="text-xl sm:text-2xl font-extrabold text-amber-600">~130 - 150g</span>
-            <span class="text-[11px] theme-text-sub block mt-1">Para proteger tu masa muscular</span>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h4 class="text-xs font-bold uppercase tracking-wider theme-text-sub">Lista interactiva para el mercado (toca para tachar)</h4>
-            <span class="text-[11px] theme-text-sub" id="shop-checked-count">0 tachados</span>
-          </div>
-          <div id="shopping-items-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
-          
-          <div class="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-xs text-emerald-800 dark:text-emerald-300 flex items-start gap-2">
-            <i class="fa-solid fa-lightbulb mt-0.5 text-emerald-600 shrink-0"></i>
-            <span><strong>Tip de ahorro:</strong> Compra pechuga entera con hueso y pide al carnicero que la deshuese para fajita. O aprovecha el cono/tapa de huevo de 30 piezas en tianguis o central de abastos, que rinde mucho más que comprar por docena empacada.</span>
-          </div>
-        </div>
+        <h3 class="text-base font-bold theme-text theme-heading-font border-b theme-border pb-4 mb-4">Lista de Compras Interactiva</h3>
+        <div id="shopping-items-list" class="grid grid-cols-1 md:grid-cols-2 gap-3"></div>
       </div>
     </section>
 
+    <!-- TAB 5: AI ADVISOR -->
     <section id="tab-custom-ai" class="space-y-6 hidden">
       <div class="theme-card border theme-border rounded-2xl p-5 shadow-xs">
-        <div class="max-w-2xl mb-4">
-          <h3 class="text-base font-bold theme-text theme-heading-font flex items-center gap-2">
-            <i class="fa-solid fa-wand-magic-sparkles text-emerald-600"></i> Asesor de Despensa a la Medida
-          </h3>
-          <p class="text-xs theme-text-sub">
-            ¿Te sobró algo en el refri o tienes un antojo específico? Describe lo que tienes y el asistente te dará una combinación adaptada a tus porciones exactas.
-          </p>
-        </div>
-
-        <div class="space-y-3">
-          <label class="block text-xs font-medium theme-text">Escribe lo que tienes disponible:</label>
-          <div class="flex flex-col sm:flex-row gap-2">
-            <input type="text" id="ai-user-prompt" placeholder="Ej: Me quedaron 3 huevos, media lata de garbanzos y 2 calabacitas..." class="flex-1 theme-surface border theme-border rounded-xl px-4 py-2.5 text-sm theme-text placeholder:text-slate-400 focus:outline-none focus:border-emerald-500 transition">
-            <button type="button" onclick="askMealPrepAI()" id="btn-ai-generate" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl transition flex items-center justify-center gap-2 shadow-sm shrink-0 active:scale-95">
-              <i class="fa-solid fa-bolt"></i> Crear Opción
-            </button>
-          </div>
-        </div>
-
-        <div id="ai-response-area" class="mt-5 hidden p-4 rounded-xl theme-surface border theme-border text-sm space-y-3">
-          <div class="flex items-center justify-between pb-2 border-b theme-border">
-            <span class="text-xs font-bold text-emerald-600 flex items-center gap-1.5">
-              <i class="fa-solid fa-sparkles"></i> Receta Personalizada con Porciones
-            </span>
-            <span class="text-[11px] theme-text-sub" id="ai-status">Calculado para tu meta</span>
-          </div>
-          <div id="ai-result-content" class="theme-text text-xs sm:text-sm leading-relaxed whitespace-pre-line"></div>
-        </div>
+        <h3 class="text-base font-bold theme-text theme-heading-font mb-4">Asesor de Antojos en Versión Fit</h3>
+        <input type="text" id="ai-prompt" placeholder="Ej: Se me antoja una pizza o unos chilaquiles..." class="w-full theme-surface border theme-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 mb-3">
+        <button type="button" onclick="window.simularAI()" class="px-5 py-2.5 bg-emerald-600 text-white font-bold text-sm rounded-xl">Adaptar a mi plan</button>
+        <div id="ai-response" class="mt-4 p-4 rounded-xl theme-surface border theme-border text-sm hidden whitespace-pre-line"></div>
       </div>
     </section>
-
   </main>
 
-  <!-- MODAL 1: RECIPE DETAIL -->
+  <!-- MODALS -->
   <div id="recipe-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="theme-card border theme-border rounded-2xl max-w-lg w-full p-5 sm:p-6 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      <button type="button" onclick="closeModal('recipe-modal')" class="absolute top-4 right-4 theme-text-sub hover:theme-text w-8 h-8 rounded-full theme-surface flex items-center justify-center transition border theme-border active:scale-90">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="space-y-1 pr-6">
-        <span id="modal-tag" class="text-[11px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 border border-emerald-500/25">Día de Entrenamiento</span>
-        <h3 id="modal-title" class="text-lg font-bold theme-text theme-heading-font">Nombre de la Receta</h3>
-        <p id="modal-desc" class="text-xs theme-text-sub">Descripción breve del plato.</p>
-      </div>
-
-      <!-- Porciones Conscientes en Modal -->
-      <div class="theme-surface p-3.5 rounded-xl border theme-border space-y-2">
-        <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-1.5">
-          <i class="fa-solid fa-scale-balanced"></i> Porciones Consumidas en este Plato:
-        </span>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs" id="modal-portions-grid"></div>
-      </div>
-
-      <div class="grid grid-cols-3 gap-2 theme-surface p-3 rounded-xl border theme-border text-center text-xs">
-        <div>
-          <span class="theme-text-sub block text-[11px]">Costo Aprox</span>
-          <span id="modal-cost" class="font-bold text-emerald-600 text-sm">$32 MXN</span>
-        </div>
-        <div>
-          <span class="theme-text-sub block text-[11px]">Proteína</span>
-          <span id="modal-protein" class="font-bold text-teal-600 text-sm">~38g</span>
-        </div>
-        <div>
-          <span class="theme-text-sub block text-[11px]">Armado</span>
-          <span id="modal-time" class="font-bold text-amber-600 text-sm">4 min</span>
-        </div>
-      </div>
-
-      <div class="space-y-3">
-        <h4 class="text-xs font-bold theme-text uppercase tracking-wider theme-heading-font">Ingredientes / Equivalentes:</h4>
-        <ul id="modal-ingredients" class="text-xs theme-text space-y-1.5 list-disc list-inside theme-surface p-3 rounded-xl border theme-border"></ul>
-
-        <h4 class="text-xs font-bold theme-text uppercase tracking-wider theme-heading-font">Instrucciones de Ensamblaje Rápido:</h4>
-        <ol id="modal-steps" class="text-xs theme-text space-y-2 list-decimal list-inside theme-surface p-3 rounded-xl border theme-border"></ol>
-      </div>
-
-      <div class="pt-2">
-        <button type="button" onclick="closeModal('recipe-modal')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs active:scale-98">
-          Entendido, volver al menú
-        </button>
-      </div>
+    <div class="theme-card border theme-border rounded-2xl max-w-lg w-full p-5 space-y-4 shadow-2xl relative">
+      <button onclick="window.closeModal('recipe-modal')" class="absolute top-4 right-4 w-8 h-8 rounded-full theme-surface border theme-border flex justify-center items-center"><i class="fa-solid fa-xmark"></i></button>
+      <div id="modal-content" class="space-y-4"></div>
+      <button onclick="window.closeModal('recipe-modal')" class="w-full py-2.5 bg-emerald-600 text-white rounded-xl font-bold text-xs">Cerrar</button>
     </div>
   </div>
 
-  <!-- MODAL 2: FULL WEEK SUMMARY -->
   <div id="full-week-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="theme-card border theme-border rounded-2xl max-w-3xl w-full p-5 sm:p-6 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      <button type="button" onclick="closeModal('full-week-modal')" class="absolute top-4 right-4 theme-text-sub hover:theme-text w-8 h-8 rounded-full theme-surface flex items-center justify-center transition border theme-border active:scale-90">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="space-y-1">
-        <span class="text-[11px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 border border-emerald-500/25">Resumen Integral</span>
-        <h3 class="text-lg font-bold theme-text theme-heading-font flex items-center gap-2">
-          <i class="fa-solid fa-calendar-week text-emerald-600"></i> Tu Semana Completa de un Vistazo
-        </h3>
-        <p class="text-xs theme-text-sub">Consulta tu itinerario de Lunes a Domingo con los platillos y porciones asignadas a cada día.</p>
-      </div>
-
-      <div class="overflow-x-auto rounded-xl border theme-border">
-        <table class="w-full text-left text-xs border-collapse">
-          <thead>
-            <tr class="theme-surface border-b theme-border text-[11px] uppercase tracking-wider theme-text-sub font-bold">
-              <th class="p-3">Día</th>
-              <th class="p-3">Tipo</th>
-              <th class="p-3">Comida Principal</th>
-              <th class="p-3">Cena</th>
-              <th class="p-3 text-center">Proteína Total</th>
-            </tr>
-          </thead>
-          <tbody id="full-week-table-body" class="divide-y theme-border"></tbody>
-        </table>
-      </div>
-
-      <div class="flex justify-end pt-2">
-        <button type="button" onclick="closeModal('full-week-modal')" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs active:scale-95">
-          Cerrar Resumen
-        </button>
-      </div>
+    <div class="theme-card border theme-border rounded-2xl max-w-4xl w-full p-5 space-y-4 shadow-2xl overflow-auto max-h-[90vh]">
+      <button onclick="window.closeModal('full-week-modal')" class="float-right w-8 h-8 rounded-full theme-surface border theme-border"><i class="fa-solid fa-xmark"></i></button>
+      <h3 class="text-lg font-bold theme-text theme-heading-font mb-4">Resumen Semanal Híbrido</h3>
+      <table class="w-full text-left text-xs border-collapse">
+        <thead><tr class="theme-surface border-b theme-border theme-text-sub"><th class="p-2">Día</th><th class="p-2">Fase</th><th class="p-2">Desayuno</th><th class="p-2">Comida</th><th class="p-2">Cena</th><th class="p-2">Capricho</th></tr></thead>
+        <tbody id="week-table-body" class="divide-y theme-border"></tbody>
+      </table>
     </div>
   </div>
 
-  <!-- MODAL 3: TUTORIAL & HOW TO USE -->
-  <div id="tutorial-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
-    <div class="theme-card border theme-border rounded-2xl max-w-lg w-full p-5 sm:p-6 space-y-4 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      <button type="button" onclick="closeModal('tutorial-modal')" class="absolute top-4 right-4 theme-text-sub hover:theme-text w-8 h-8 rounded-full theme-surface flex items-center justify-center transition border theme-border active:scale-90">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="space-y-1">
-        <span class="text-[11px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 border border-emerald-500/25">Paso a Paso</span>
-        <h3 class="text-lg font-bold theme-text theme-heading-font flex items-center gap-2">
-          <i class="fa-solid fa-compass text-emerald-600"></i> ¿Cómo usar tu app en 2 momentos?
-        </h3>
-        <p class="text-xs theme-text-sub">Diseñada para que no pienses qué comer y ahorres tiempo y dinero.</p>
-      </div>
-
-      <div class="space-y-3 text-xs leading-relaxed">
-        <div class="p-3.5 rounded-xl theme-surface border theme-border space-y-1.5">
-          <h4 class="font-bold text-emerald-600 flex items-center gap-2 text-sm">
-            <span class="w-6 h-6 rounded-full bg-emerald-500/15 flex items-center justify-center text-xs">1</span>
-            El Fin de Semana (10 minutos)
-          </h4>
-          <p class="theme-text-sub">
-            • Entra a <strong>"Mi Menú Semanal"</strong> y toca los botones de los días para indicar cuándo vas al Gym y cuándo descansas.<br>
-            • Ve a <strong>"Compras Mercado"</strong>: tendrás la lista consolidada en kilos y piezas. Toca cada producto en el súper o mercado para tacharlo.<br>
-            • Cocina tus <strong>3 cajas base</strong> (pollo/molida, arroz/papas, calabacitas/nopales) siguiendo la pestaña <strong>"Sistema Lego"</strong>.
-          </p>
-        </div>
-
-        <div class="p-3.5 rounded-xl theme-surface border theme-border space-y-1.5">
-          <h4 class="font-bold text-teal-600 flex items-center gap-2 text-sm">
-            <span class="w-6 h-6 rounded-full bg-teal-500/15 flex items-center justify-center text-xs">2</span>
-            Día a Día (3 minutos antes de comer)
-          </h4>
-          <p class="theme-text-sub">
-            • <strong>Si sigues tu plan:</strong> Abres la app, miras el plato del día, sacas las porciones de tus cajas base del refri, calientas y sirves.<br>
-            • <strong>Si quieres improvisar:</strong> Ve a <strong>"Armar con Despensa"</strong>, marca lo que tienes listo y la app te mostrará platillos armables ya mismo con porciones conscientes (palmas, puños y verduras).
-          </p>
-        </div>
-
-        <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-800 dark:text-amber-300">
-          <strong class="block mb-0.5"><i class="fa-solid fa-mobile-screen mr-1"></i> Tip para tu tableta:</strong>
-          En Safari (iPad) toca <em>Compartir > Agregar a pantalla de inicio</em>. En Chrome (Android/PC) toca los 3 puntos y elige <em>Instalar app</em> para abrirla con su propio ícono a pantalla completa.
-        </div>
-      </div>
-
-      <div class="pt-2">
-        <button type="button" onclick="closeModal('tutorial-modal')" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition active:scale-98">
-          ¡Entendido, a comer rico y sano!
-        </button>
-      </div>
+  <div id="equivalents-modal" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4">
+    <div class="theme-card border theme-border rounded-2xl max-w-lg w-full p-5 space-y-4 shadow-2xl">
+      <h3 class="text-lg font-bold theme-text theme-heading-font">Tabla de Equivalentes (SMAE)</h3>
+      <ul class="text-xs space-y-3 theme-text-sub">
+        <li><strong>🍗 AOA (1 porc):</strong> 30g-40g Pollo/Res, 1 Huevo, 40g Panela.</li>
+        <li><strong>🍚 Cereales (1 porc):</strong> 1 Tortilla, 1/2 tza Arroz, 1/3 tza Avena, 1/2 Papa.</li>
+        <li><strong>🥗 Verduras (1 porc):</strong> 1 tza Nopales/Calabaza cruda, 2 tzas Espinaca.</li>
+        <li><strong>🍨 Caprichos Fit:</strong> 1 tza Leche Almendras + 1/2 Plátano Congelado + 1 cda Cacao = Base de helado sin culpa.</li>
+      </ul>
+      <button onclick="window.closeModal('equivalents-modal')" class="w-full py-2 bg-teal-600 text-white rounded-xl font-bold text-xs mt-4">Entendido</button>
     </div>
   </div>
 
-  <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-16 opacity-0 transition duration-300 pointer-events-none px-4 py-2.5 rounded-xl shadow-lg text-xs font-bold flex items-center gap-2 bg-emerald-600 text-white">
-    <i class="fa-solid fa-check"></i>
-    <span id="toast-text">Acción completada</span>
-  </div>
+  <div id="toast" class="fixed bottom-5 right-5 transform translate-y-16 opacity-0 transition duration-300 px-4 py-2.5 rounded-xl shadow-lg text-xs font-bold bg-emerald-600 text-white z-50"><i class="fa-solid fa-check mr-2"></i><span id="toast-text"></span></div>
 
-  <!-- Footer -->
-  <footer class="border-t theme-border theme-surface py-4 text-center text-xs theme-text-sub">
-    <p>FitMeal Modular • Diseñado para recomposición deportiva con control de porciones y bajo costo.</p>
-  </footer>
-
+  <!-- JAVASCRIPT LOGIC (Hybrid Engine) -->
   <script>
-    /* State declarations */
-    let currentMode = 'gym';
-    let currentTab = 'week';
-    let currentTheme = 'kitchen';
-
-    const PANTRY_ITEMS = {
-      proteins: [
-        { id: 'pollo', label: 'Pollo (pechuga / muslo)', icon: 'fa-drumstick-bite', default: true },
-        { id: 'huevo', label: 'Huevos enteros', icon: 'fa-egg', default: true },
-        { id: 'molida', label: 'Carne molida magra', icon: 'fa-burger', default: true },
-        { id: 'atun', label: 'Atún en lata (agua)', icon: 'fa-fish', default: true },
-        { id: 'frijoles', label: 'Frijoles negros / lentejas', icon: 'fa-seedling', default: true },
-        { id: 'panela', label: 'Queso panela / fresco', icon: 'fa-cheese', default: false }
-      ],
-      carbs: [
-        { id: 'arroz', label: 'Arroz blanco / integral', icon: 'fa-bowl-rice', default: true },
-        { id: 'tortillas', label: 'Tortillas de maíz', icon: 'fa-circle', default: true },
-        { id: 'papa', label: 'Papas / Camote', icon: 'fa-apple-whole', default: true },
-        { id: 'avena', label: 'Avena en hojuelas', icon: 'fa-wheat-awn', default: true },
-        { id: 'pasta', label: 'Pasta integral o simple', icon: 'fa-bowl-food', default: false }
-      ],
-      greens: [
-        { id: 'calabacita', label: 'Calabacitas / Chayote', icon: 'fa-lemon', default: true },
-        { id: 'nopales', label: 'Nopales cocidos', icon: 'fa-spa', default: true },
-        { id: 'espinaca', label: 'Espinacas / Acelga', icon: 'fa-leaf', default: true },
-        { id: 'jitomate', label: 'Jitomate / Pico de gallo', icon: 'fa-pepper-hot', default: true },
-        { id: 'aguacate', label: 'Aguacate / Aceite oliva', icon: 'fa-droplet', default: false }
-      ]
+    const CONFIG = {
+      theme: 'kitchen',
+      globalLevel: 'heavy'
     };
 
-    const userPantry = new Set();
-    const checkedShoppingItems = new Set();
+    const HYBRID_LEVELS = {
+      heavy:  { id: 'heavy',  icon: '🏋️‍♀️', label: 'Gym Pesado',  color: 'pink',   desc: 'Pierna/Glúteo. Carbos altos + Capricho' },
+      normal: { id: 'normal', icon: '💪', label: 'Gym Torso',   color: 'indigo', desc: 'Espalda/Brazo. Carbos medios, proteína alta' },
+      cardio: { id: 'cardio', icon: '🚴‍♀️', label: 'Cardio',      color: 'amber',  desc: 'Running/Spinning. Ligero y fácil digestión' },
+      rest:   { id: 'rest',   icon: '🛋️', label: 'Descanso',    color: 'teal',   desc: 'Reparación. Bajo en carbos, volumen verde alto' }
+    };
 
     const RECIPES = [
-      {
-        id: 'bowl-atleta-pollo',
-        title: 'Bowl Poblano del Atleta',
-        desc: 'Proteína magra con arroz al vapor y calabacitas salteadas. Ideal para cargar glucógeno antes o después del gym.',
-        mode: 'gym',
-        cost: '$32 MXN',
-        protein: '~42g',
-        time: '3 min',
-        portions: { protein: 2, carb: 2, veg: 2, fat: 1 },
-        req: ['pollo', 'arroz', 'calabacita'],
-        ingredients: [
-          '150g de pechuga de pollo deshebrada (2 porciones / palmas)',
-          '1 taza de arroz al vapor (2 porciones / puños)',
-          '1 taza de calabacitas salteadas (2 porciones / tazas)',
-          '2 cdas de salsa verde o pico de gallo'
-        ],
-        steps: [
-          'Toma el tupper de arroz y calienta 1 minuto en sartén o microondas.',
-          'Agrega tu porción de 150g de pollo cocido encima para que absorba el vapor.',
-          'Corona con las calabacitas salteadas y salsa al gusto.'
-        ]
-      },
-      {
-        id: 'tacos-molida-frijol',
-        title: 'Tacos Deportivos de Molida y Frijol',
-        desc: 'Energía limpia y fibra en tortillas de maíz con carne molida rendidora y frijoles de olla.',
-        mode: 'gym',
-        cost: '$28 MXN',
-        protein: '~36g',
-        time: '4 min',
-        portions: { protein: 2, carb: 2.5, veg: 1.5, fat: 1 },
-        req: ['molida', 'tortillas', 'frijoles'],
-        ingredients: [
-          '130g de carne molida magra guisada (2 porciones / palmas)',
-          '1/2 taza de frijoles negros de la olla (1 porción / puño)',
-          '3 tortillas de maíz (1.5 porciones carb)',
-          'Pico de gallo abundante para volumen verde (1.5 tazas)'
-        ],
-        steps: [
-          'Calienta la carne molida junto con los frijoles en un sartén pequeño.',
-          'Pasa las tortillas por el comal hasta que estén suaves.',
-          'Rellena los tacos y cubre con abundante pico de gallo y limón.'
-        ]
-      },
-      {
-        id: 'skillet-papas-huevo',
-        title: 'Sartén Rústico de Papa y Huevos',
-        desc: 'Desayuno o cena ultra potente para recargar músculo a costo mínimo.',
-        mode: 'gym',
-        cost: '$22 MXN',
-        protein: '~28g',
-        time: '5 min',
-        portions: { protein: 2, carb: 2, veg: 1.5, fat: 1.5 },
-        req: ['huevo', 'papa', 'espinaca'],
-        ingredients: [
-          '3 huevos enteros (2 porciones / palmas)',
-          '1 papa mediana cocida en cubos (2 porciones / puños)',
-          '1 puño grande de espinacas (1.5 tazas)',
-          'Sal, pimienta y paprika'
-        ],
-        steps: [
-          'Dora los cubos de papa cocida en sartén con una gota de aceite.',
-          'Añade las espinacas hasta que reduzcan de tamaño (30 segundos).',
-          'Vierte los huevos batidos y revuelve a fuego medio hasta cuajar.'
-        ]
-      },
-      {
-        id: 'avena-pro-huevo',
-        title: 'Avena Cocida con Omelette Proteico',
-        desc: 'Carbohidratos sostenidos para entrenar pesado sin bajones de energía.',
-        mode: 'gym',
-        cost: '$19 MXN',
-        protein: '~26g',
-        time: '5 min',
-        portions: { protein: 2, carb: 2, veg: 1, fat: 1 },
-        req: ['avena', 'huevo'],
-        ingredients: [
-          '1/2 taza de avena en hojuelas con canela (2 porciones / puños)',
-          '3 huevos revueltos con pico de gallo (2 porciones prot)',
-          'Pizca de sal y canela'
-        ],
-        steps: [
-          'Cocina la avena con agua y canela en microondas 2 minutos.',
-          'Acompaña a un lado con los huevos revueltos.',
-          'Comida completa que te da energía constante durante tu entrenamiento.'
-        ]
-      },
-      {
-        id: 'ensalada-atun-nopales',
-        title: 'Ensalada Voluminosa de Atún y Nopales',
-        desc: 'Cero almidones pesados, saciedad extrema por fibra y proteína magra para días sin gym.',
-        mode: 'rest',
-        cost: '$26 MXN',
-        protein: '~32g',
-        time: '3 min',
-        portions: { protein: 2, carb: 0.5, veg: 3, fat: 0.5 },
-        req: ['atun', 'nopales', 'jitomate'],
-        ingredients: [
-          '1 lata de atún en agua bien escurrida (2 porciones / palmas)',
-          '1.5 tazas de nopales cocidos en tiras (2 porciones verdura)',
-          '1/2 taza de jitomate y cebolla picada (1 porción verdura)',
-          '1 cdta de orégano seco y limón al gusto'
-        ],
-        steps: [
-          'Mezcla los nopales fríos con el jitomate y cebolla en un bowl.',
-          'Incorpora el atún escurrido desmenuzándolo con un tenedor.',
-          'Sazona con abundante limón, sal y orégano. Sensación de saciedad inmediata.'
-        ]
-      },
-      {
-        id: 'pollo-fajitas-calabaza',
-        title: 'Fajitas de Pollo y Doble Calabacita al Ajo',
-        desc: 'Déficit calórico limpio: máxima cantidad de comida en el plato con mínimas calorías.',
-        mode: 'rest',
-        cost: '$30 MXN',
-        protein: '~40g',
-        time: '4 min',
-        portions: { protein: 2, carb: 0.5, veg: 3, fat: 1 },
-        req: ['pollo', 'calabacita', 'espinaca'],
-        ingredients: [
-          '150g de pechuga de pollo en fajitas (2 porciones prot)',
-          '2 calabacitas rebanadas en medias lunas (2.5 porciones verdura)',
-          '1 puño de espinacas (1 porción verdura)',
-          '1/4 de aguacate (1 porción grasa sana)'
-        ],
-        steps: [
-          'Saltea las calabacitas a fuego vivo con ajo en polvo hasta dorar.',
-          'Incorpora el pollo cocido y las espinacas 1 minuto para calentar.',
-          'Sirve con el cuarto de aguacate en rebanadas.'
-        ]
-      },
-      {
-        id: 'omelette-panela-nopales',
-        title: 'Omelette de Nopal y Queso Panela',
-        desc: 'Proteína de digestión lenta y grasas moderadas para reparar tejidos en descanso.',
-        mode: 'rest',
-        cost: '$24 MXN',
-        protein: '~29g',
-        time: '5 min',
-        portions: { protein: 2, carb: 0.5, veg: 2, fat: 1.5 },
-        req: ['huevo', 'nopales', 'panela'],
-        ingredients: [
-          '3 huevos enteros (2 porciones prot)',
-          '50g de queso panela en cubos (0.5 porción prot)',
-          '1 taza de nopales cocidos salteados (2 porciones verdura)',
-          'Salsa casera'
-        ],
-        steps: [
-          'Bate los huevos y viértelos en sartén antiadherente.',
-          'Rellena con los nopales y el queso panela cuando empiece a cuajar.',
-          'Dobla y sirve acompañado de salsa caliente.'
-        ]
-      },
-      {
-        id: 'picadillo-verde-ligero',
-        title: 'Picadillo Ligero con Calabacita y Espinaca',
-        desc: 'Carne molida magra guisada en verduras sin almidones añadidos.',
-        mode: 'rest',
-        cost: '$31 MXN',
-        protein: '~35g',
-        time: '4 min',
-        portions: { protein: 2, carb: 0.5, veg: 2.5, fat: 1 },
-        req: ['molida', 'calabacita', 'espinaca'],
-        ingredients: [
-          '140g de carne molida magra cocida (2 porciones prot)',
-          '1 taza de calabacitas en cubos (1.5 porciones verdura)',
-          '1 taza de espinacas cocidas (1 porción verdura)',
-          'Toque de chipotle o comino'
-        ],
-        steps: [
-          'Calienta la carne molida en sartén con las calabacitas.',
-          'Deja que la calabacita suelte su jugo natural para hidratar la carne.',
-          'Sirve en plato hondo; reconfortante y bajo en carbohidratos.'
-        ]
-      }
+      // DESAYUNOS
+      { id: 'chilaquiles-fit', title: 'Chilaquiles Verdes Fit con Pollo', cat: 'breakfast', modes: ['heavy', 'normal'], cost: '$26', prot: '38g', req: ['pollo','tortillas'], portions: {aoa: 4, carb: 3, veg: 1.5, fat: 1}, desc: 'Totopos horneados con salsa y pollo. Ideal post o pre entreno de fuerza.' },
+      { id: 'overnight-oats', title: 'Avena Remojada (Overnight Oats)', cat: 'breakfast', modes: ['heavy', 'cardio'], cost: '$18', prot: '22g', req: ['avena','leche_almendra'], portions: {aoa: 2, carb: 3, veg: 0, fat: 1}, desc: 'Digestión rápida para correr o energía lenta para pesas.' },
+      { id: 'huevos-rancheros', title: 'Huevos Rancheros al Comal', cat: 'breakfast', modes: ['normal'], cost: '$22', prot: '28g', req: ['huevo','frijoles','tortillas'], portions: {aoa: 3, carb: 3, veg: 1, fat: 1}, desc: 'Desayuno de fuerza estándar. Proteína completa.' },
+      { id: 'omelette-nopales', title: 'Omelette Verde Saciedad', cat: 'breakfast', modes: ['rest'], cost: '$21', prot: '28g', req: ['huevo','nopales'], portions: {aoa: 4, carb: 0.5, veg: 3, fat: 1}, desc: 'Sin almidones pesados, volumen gigante para días de descanso.' },
+      
+      // COMIDAS / CENAS
+      { id: 'bowl-atleta', title: 'Bowl Atleta (Pollo y Arroz)', cat: 'main', modes: ['heavy'], cost: '$32', prot: '42g', req: ['pollo','arroz'], portions: {aoa: 5, carb: 3, veg: 2, fat: 1}, desc: 'Carga pura de glucógeno para cuádriceps.' },
+      { id: 'tacos-molida', title: 'Tacos de Molida y Frijol', cat: 'main', modes: ['normal', 'heavy'], cost: '$28', prot: '36g', req: ['molida','tortillas'], portions: {aoa: 4, carb: 3, veg: 1.5, fat: 1}, desc: 'Rendimiento equilibrado para tren superior.' },
+      { id: 'skillet-papas', title: 'Sartén Rústico de Papa y Huevo', cat: 'main', modes: ['heavy', 'normal'], cost: '$22', prot: '28g', req: ['huevo','papa'], portions: {aoa: 3, carb: 2.5, veg: 2, fat: 1.5}, desc: 'Recarga potente.' },
+      { id: 'pollo-fajitas', title: 'Fajitas de Pollo y Doble Verdura', cat: 'main', modes: ['rest'], cost: '$30', prot: '40g', req: ['pollo','calabacita'], portions: {aoa: 5, carb: 0.5, veg: 3.5, fat: 1}, desc: 'Déficit limpio, mucha saciedad.' },
+      { id: 'ensalada-atun', title: 'Ensalada Voluminosa de Atún', cat: 'main', modes: ['rest', 'cardio'], cost: '$26', prot: '32g', req: ['atun','nopales'], portions: {aoa: 4, carb: 0.5, veg: 3.5, fat: 0.5}, desc: 'Ligero para después del cardio o día inactivo.' },
+      
+      // CAPRICHOS FIT (TREATS)
+      { id: 'helado-cacao', title: 'Helado Cremoso Cacao y Almendras', cat: 'treat', modes: ['heavy'], cost: '$19', prot: '24g', req: ['platano_congelado','cacao','leche_almendra'], portions: {aoa: 2, carb: 2, veg: 0, fat: 1}, desc: 'Premio muscular tras día de pierna. Textura de helado artesanal.' },
+      { id: 'frappe-moka', title: 'Frappé Moka Proteico', cat: 'treat', modes: ['normal'], cost: '$18', prot: '22g', req: ['leche_almendra','cacao'], portions: {aoa: 2, carb: 1, veg: 0, fat: 1}, desc: 'Frescura ligera para la tarde.' },
+      { id: 'fruta-fresca', title: 'Plátano y Crema de Maní', cat: 'treat', modes: ['cardio'], cost: '$12', prot: '5g', req: ['platano_congelado'], portions: {aoa: 0, carb: 2, veg: 0, fat: 1}, desc: 'Recuperación oxidativa post-running.' }
     ];
 
-    let weeklyPlan = [
-      { dayName: 'Lunes', type: 'gym', lunch: 'bowl-atleta-pollo', dinner: 'skillet-papas-huevo' },
-      { dayName: 'Martes', type: 'gym', lunch: 'tacos-molida-frijol', dinner: 'avena-pro-huevo' },
-      { dayName: 'Miércoles', type: 'rest', lunch: 'pollo-fajitas-calabaza', dinner: 'ensalada-atun-nopales' },
-      { dayName: 'Jueves', type: 'gym', lunch: 'bowl-atleta-pollo', dinner: 'tacos-molida-frijol' },
-      { dayName: 'Viernes', type: 'gym', lunch: 'skillet-papas-huevo', dinner: 'bowl-atleta-pollo' },
-      { dayName: 'Sábado', type: 'rest', lunch: 'picadillo-verde-ligero', dinner: 'omelette-panela-nopales' },
-      { dayName: 'Domingo', type: 'rest', lunch: 'pollo-fajitas-calabaza', dinner: 'ensalada-atun-nopales' }
+    const PANTRY = [
+      { id: 'pollo', label: 'Pollo (pechuga)', type: 'proteins', icon: 'fa-drumstick-bite' },
+      { id: 'huevo', label: 'Huevos', type: 'proteins', icon: 'fa-egg' },
+      { id: 'molida', label: 'Carne molida', type: 'proteins', icon: 'fa-burger' },
+      { id: 'atun', label: 'Atún en lata', type: 'proteins', icon: 'fa-fish' },
+      { id: 'tortillas', label: 'Tortillas maíz', type: 'carbs', icon: 'fa-circle' },
+      { id: 'avena', label: 'Avena hojuelas', type: 'carbs', icon: 'fa-wheat-awn' },
+      { id: 'arroz', label: 'Arroz al vapor', type: 'carbs', icon: 'fa-bowl-rice' },
+      { id: 'papa', label: 'Papa/Camote', type: 'carbs', icon: 'fa-apple-whole' },
+      { id: 'leche_almendra', label: 'L. Almendras', type: 'carbs', icon: 'fa-glass-water' },
+      { id: 'calabacita', label: 'Calabacitas', type: 'greens', icon: 'fa-lemon' },
+      { id: 'nopales', label: 'Nopales cocidos', type: 'greens', icon: 'fa-spa' },
+      { id: 'frijoles', label: 'Frijoles negros', type: 'greens', icon: 'fa-seedling' },
+      { id: 'platano_congelado', label: 'Plátano congelado', type: 'treats', icon: 'fa-ice-cream' },
+      { id: 'cacao', label: 'Cacao puro', type: 'treats', icon: 'fa-mug-saucer' }
     ];
 
-    function saveAppState() {
-      try {
-        const state = {
-          theme: currentTheme,
-          mode: currentMode,
-          pantry: Array.from(userPantry),
-          weeklyPlan: weeklyPlan,
-          checkedShopping: Array.from(checkedShoppingItems)
-        };
-        localStorage.setItem('fitmeal_user_state', JSON.stringify(state));
-      } catch (e) {
-        console.warn('Local storage write blocked or unavailable:', e);
-      }
-    }
+    let userPantry = new Set(PANTRY.map(p => p.id));
+    let weeklyPlan = [];
 
-    function loadAppState() {
-      try {
-        const saved = localStorage.getItem('fitmeal_user_state');
-        if (saved) {
-          const state = JSON.parse(saved);
-          if (state.theme) currentTheme = state.theme;
-          if (state.mode) currentMode = state.mode;
-          if (Array.isArray(state.pantry) && state.pantry.length > 0) {
-            userPantry.clear();
-            state.pantry.forEach(id => userPantry.add(id));
-          }
-          if (Array.isArray(state.weeklyPlan) && state.weeklyPlan.length === 7) {
-            weeklyPlan = state.weeklyPlan;
-          }
-          if (Array.isArray(state.checkedShopping)) {
-            checkedShoppingItems.clear();
-            state.checkedShopping.forEach(id => checkedShoppingItems.add(id));
-          }
-        }
-      } catch (e) {
-        console.warn('Local storage read error, fallback to defaults:', e);
-      }
-    }
-
-    function setTheme(theme) {
-      currentTheme = theme;
-      document.documentElement.setAttribute('data-theme', theme);
-
-      const btnDark = document.getElementById('theme-btn-dark');
-      const btnLight = document.getElementById('theme-btn-light');
-      const btnKitchen = document.getElementById('theme-btn-kitchen');
-      const brandIcon = document.getElementById('brand-icon');
-      const appBadge = document.getElementById('app-badge');
-
-      [btnDark, btnLight, btnKitchen].forEach(btn => {
-        if (btn) btn.className = "px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition font-medium theme-text-sub hover:theme-text";
-      });
-
-      if (theme === 'dark' && btnDark) {
-        btnDark.className = "px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition font-bold bg-slate-800 text-emerald-400 shadow-xs";
-        if (brandIcon) brandIcon.className = "w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md text-lg";
-        if (appBadge) appBadge.className = "text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-bold border border-emerald-500/20";
-        showToast("Modo Poca Luz activado");
-      } else if (theme === 'light' && btnLight) {
-        btnLight.className = "px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition font-bold bg-white text-emerald-600 shadow-xs border border-slate-200";
-        if (brandIcon) brandIcon.className = "w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-md text-lg";
-        if (appBadge) appBadge.className = "text-[11px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-bold border border-emerald-200";
-        showToast("Modo Mucha Luz activado");
-      } else if (theme === 'kitchen' && btnKitchen) {
-        btnKitchen.className = "px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 transition font-bold bg-[#EADCCE] text-[#7A3622] shadow-xs";
-        if (brandIcon) brandIcon.className = "w-10 h-10 rounded-xl bg-[#C25E3E] text-white flex items-center justify-center shadow-md text-lg";
-        if (appBadge) appBadge.className = "text-[11px] px-2 py-0.5 rounded-full bg-[#FBECE7] text-[#C25E3E] font-bold border border-[#F3C4B6]";
-        showToast("Modo Recetario Cálido activado");
-      }
-
-      refreshPantryUI();
-      renderMeals();
-      renderWeeklyCards();
-      saveAppState();
-    }
-
-    function setDayMode(mode) {
-      currentMode = mode;
-      const btnGym = document.getElementById('mode-gym-btn');
-      const btnRest = document.getElementById('mode-rest-btn');
-      const bannerTag = document.getElementById('banner-tag');
-      const bannerTitle = document.getElementById('banner-title');
-      const bannerDesc = document.getElementById('banner-desc');
-
-      if (mode === 'gym') {
-        if (btnGym) btnGym.className = "px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5 bg-emerald-600 text-white shadow-xs";
-        if (btnRest) btnRest.className = "px-3 py-1.5 rounded-lg font-medium theme-text-sub hover:theme-text transition flex items-center gap-1.5";
-        if (bannerTag) bannerTag.innerText = "MODO GIMNASIO ACTIVO";
-        if (bannerTitle) bannerTitle.innerText = "Porciones altas de proteína con carbohidratos funcionales";
-        if (bannerDesc) bannerDesc.innerText = "Usa energía limpia (arroz, papas o tortillas) para levantar pesado. La proteína alta (~140-160g) protege tu masa muscular mientras quemas grasa.";
-        showToast("Modo Gimnasio: 2 porciones de carbohidratos activos");
-      } else {
-        if (btnRest) btnRest.className = "px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1.5 bg-teal-600 text-white shadow-xs";
-        if (btnGym) btnGym.className = "px-3 py-1.5 rounded-lg font-medium theme-text-sub hover:theme-text transition flex items-center gap-1.5";
-        if (bannerTag) bannerTag.innerText = "MODO DESCANSO & QUEMA";
-        if (bannerTitle) bannerTitle.innerText = "Volumen vegetal alto, saciedad y déficit calórico limpio";
-        if (bannerDesc) bannerDesc.innerText = "En días sin entrenamiento bajamos almidones y aumentamos calabacitas y nopales (3 porciones de verdura). Máxima saciedad sin hambre.";
-        showToast("Modo Descanso: Enfoque quema y volumen verde");
-      }
-      saveAppState();
-      renderMeals();
-    }
-
-    function switchTab(tabId) {
-      currentTab = tabId;
-      const tabs = ['week', 'generator', 'mealprep', 'shopping', 'custom-ai'];
-      tabs.forEach(t => {
-        const el = document.getElementById(`tab-${t}`);
+    window.switchTab = function(tabId) {
+      ['week', 'generator', 'mealprep', 'shopping', 'custom-ai'].forEach(t => {
+        document.getElementById(`tab-${t}`).classList.toggle('hidden', t !== tabId);
         const btn = document.getElementById(`tab-btn-${t}`);
-        if (t === tabId) {
-          if (el) el.classList.remove('hidden');
-          if (btn) btn.className = "py-3 border-b-2 border-emerald-500 text-emerald-600 flex items-center gap-2 transition whitespace-nowrap font-bold";
-        } else {
-          if (el) el.classList.add('hidden');
-          if (btn) btn.className = "py-3 border-b-2 border-transparent theme-text-sub hover:theme-text flex items-center gap-2 transition whitespace-nowrap font-medium";
-        }
+        if(btn) btn.className = t === tabId 
+          ? "py-3 border-b-2 border-emerald-500 text-emerald-600 font-bold flex items-center gap-2 whitespace-nowrap" 
+          : "py-3 border-b-2 border-transparent theme-text-sub flex items-center gap-2 whitespace-nowrap hover:theme-text transition";
       });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      window.scrollTo(0,0);
+    };
 
-    function initPantry() {
-      loadAppState();
-      renderPantryGroup('pantry-proteins', PANTRY_ITEMS.proteins);
-      renderPantryGroup('pantry-carbs', PANTRY_ITEMS.carbs);
-      renderPantryGroup('pantry-greens', PANTRY_ITEMS.greens);
-      setTheme(currentTheme);
-      setDayMode(currentMode);
-      renderWeeklyCards();
-      renderMeals();
-      calculateShoppingList();
-    }
-
-    function renderPantryGroup(containerId, items) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-      container.innerHTML = '';
-
-      items.forEach(item => {
-        if (item.default && userPantry.size === 0) {
-          userPantry.add(item.id);
-        }
-
-        const isChecked = userPantry.has(item.id);
-        const card = document.createElement('button');
-        card.type = 'button';
-        card.id = `pantry-toggle-${item.id}`;
-        card.className = `p-3 rounded-xl border text-left flex items-center justify-between text-xs transition select-none ${
-          isChecked 
-            ? 'theme-surface border-emerald-500 shadow-xs' 
-            : 'theme-card theme-border hover:border-slate-400'
-        }`;
-        card.onclick = () => togglePantryItem(item.id);
-
-        card.innerHTML = `
-          <div class="flex items-center gap-2.5 truncate pr-2">
-            <span class="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${isChecked ? 'bg-emerald-500/15 text-emerald-600' : 'theme-card theme-text-sub border theme-border'}">
-              <i class="pantry-icon fa-solid ${item.icon} text-sm"></i>
-            </span>
-            <span class="pantry-label truncate font-bold text-xs theme-text">${item.label}</span>
-          </div>
-          <span class="pantry-check w-5 h-5 rounded-full flex items-center justify-center text-[10px] shrink-0 transition ${
-            isChecked ? 'bg-emerald-500 text-white font-bold' : 'border theme-border text-transparent'
-          }">
-            <i class="fa-solid fa-check"></i>
-          </span>
-        `;
-        container.appendChild(card);
+    window.setTheme = function(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      CONFIG.theme = theme;
+      ['kitchen', 'light', 'dark'].forEach(t => {
+        const btn = document.getElementById(`theme-btn-${t}`);
+        if(btn) btn.className = `px-2 py-1.5 rounded-lg flex items-center gap-1.5 transition ${t === theme ? (t==='dark'?'bg-slate-800 text-emerald-400':(t==='light'?'bg-white text-emerald-600 border border-slate-200':'bg-[#EADCCE] text-[#7A3622]')) : 'theme-text-sub'}`;
       });
-    }
+      window.renderPantry();
+    };
 
-    function togglePantryItem(id) {
-      if (userPantry.has(id)) {
-        userPantry.delete(id);
-      } else {
-        userPantry.add(id);
-      }
-      refreshPantryUI();
-      renderMeals();
-      saveAppState();
-    }
-
-    function selectAllIngredients(status) {
-      Object.values(PANTRY_ITEMS).flat().forEach(item => {
-        if (status) userPantry.add(item.id);
-        else userPantry.delete(item.id);
-      });
-      refreshPantryUI();
-      renderMeals();
-      saveAppState();
-      showToast(status ? "Todos los ingredientes marcados" : "Despensa reiniciada");
-    }
-
-    function refreshPantryUI() {
-      Object.values(PANTRY_ITEMS).flat().forEach(item => {
-        const el = document.getElementById(`pantry-toggle-${item.id}`);
-        if (!el) return;
-        const isChecked = userPantry.has(item.id);
-        
-        el.className = `p-3 rounded-xl border text-left flex items-center justify-between text-xs transition select-none ${
-          isChecked 
-            ? 'theme-surface border-emerald-500 shadow-xs' 
-            : 'theme-card theme-border hover:border-slate-400'
-        }`;
-
-        const iconContainer = el.querySelector('span:first-child');
-        if (iconContainer) {
-          iconContainer.className = `w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
-            isChecked ? 'bg-emerald-500/15 text-emerald-600' : 'theme-card theme-text-sub border theme-border'
-          }`;
-        }
-
-        const label = el.querySelector('.pantry-label');
-        if (label) {
-          label.className = `pantry-label truncate font-bold text-xs theme-text`;
-        }
-
-        const checkBadge = el.querySelector('.pantry-check');
-        if (checkBadge) {
-          checkBadge.className = `pantry-check w-5 h-5 rounded-full flex items-center justify-center text-[10px] shrink-0 transition ${
-            isChecked ? 'bg-emerald-500 text-white font-bold' : 'border theme-border text-transparent'
-          }`;
-        }
-      });
-    }
-
-    function renderMeals() {
-      const container = document.getElementById('meals-container');
-      const badge = document.getElementById('meal-count-badge');
-      if (!container) return;
-      container.innerHTML = '';
-
-      const filtered = RECIPES.filter(r => r.mode === currentMode).map(recipe => {
-        const totalReq = recipe.req.length;
-        const matched = recipe.req.filter(id => userPantry.has(id)).length;
-        const score = totalReq > 0 ? (matched / totalReq) : 1;
-        return { ...recipe, score, matched, totalReq };
-      });
-
-      filtered.sort((a, b) => b.score - a.score);
-      if (badge) badge.innerText = `${filtered.filter(f => f.score >= 0.6).length} listos con tu refri`;
-
-      filtered.forEach(recipe => {
-        const canCookNow = recipe.score >= 0.66;
-        const card = document.createElement('div');
-        card.className = `rounded-2xl p-5 border flex flex-col justify-between transition theme-card theme-border shadow-xs hover:border-emerald-500/50 ${
-          canCookNow ? '' : 'opacity-70'
-        }`;
-
-        card.innerHTML = `
-          <div class="space-y-3">
-            <div class="flex items-center justify-between gap-2">
-              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                recipe.mode === 'gym' 
-                  ? 'bg-emerald-500/15 text-emerald-600 border border-emerald-500/25' 
-                  : 'bg-teal-500/15 text-teal-600 border border-teal-500/25'
-              }">
-                <i class="fa-solid ${recipe.mode === 'gym' ? 'fa-dumbbell' : 'fa-bed'} mr-1"></i>
-                ${recipe.mode === 'gym' ? 'Día de Gym' : 'Día de Descanso'}
-              </span>
-
-              <span class="text-xs font-mono font-bold text-emerald-600 theme-surface px-2 py-0.5 rounded border theme-border">
-                ${recipe.cost}
-              </span>
-            </div>
-
-            <div>
-              <h4 class="font-bold theme-text text-base theme-heading-font">${recipe.title}</h4>
-              <p class="text-xs theme-text-sub mt-1 line-clamp-2">${recipe.desc}</p>
-            </div>
-
-            <div class="p-2.5 rounded-xl theme-surface border theme-border space-y-1">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 block">
-                Porciones en este plato:
-              </span>
-              <div class="grid grid-cols-4 gap-1 text-center text-[10px]">
-                <div class="p-1 rounded bg-emerald-500/10">
-                  <span class="font-bold text-emerald-600 block">🍗 ${recipe.portions.protein}</span>
-                  <span class="theme-text-sub text-[9px]">Palmas</span>
-                </div>
-                <div class="p-1 rounded bg-teal-500/10">
-                  <span class="font-bold text-teal-600 block">🍚 ${recipe.portions.carb}</span>
-                  <span class="theme-text-sub text-[9px]">Puños</span>
-                </div>
-                <div class="p-1 rounded bg-amber-500/10">
-                  <span class="font-bold text-amber-600 block">🥗 ${recipe.portions.veg}</span>
-                  <span class="theme-text-sub text-[9px]">Tazas</span>
-                </div>
-                <div class="p-1 rounded bg-slate-500/10">
-                  <span class="font-bold theme-text block">🥑 ${recipe.portions.fat}</span>
-                  <span class="theme-text-sub text-[9px]">Grasa</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-4 text-xs theme-text-sub pt-1">
-              <div class="flex items-center gap-1.5">
-                <i class="fa-solid fa-drumstick-bite text-emerald-600"></i>
-                <span class="font-semibold theme-text">${recipe.protein}</span>
-              </div>
-              <div class="flex items-center gap-1.5">
-                <i class="fa-regular fa-clock text-amber-600"></i>
-                <span>${recipe.time}</span>
-              </div>
-              <div class="flex items-center gap-1.5 text-[11px]">
-                <span>${recipe.matched}/${recipe.totalReq} ingredientes</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-4 pt-3 border-t theme-border flex items-center justify-between gap-2">
-            <span class="text-[11px] ${canCookNow ? 'text-emerald-600 font-semibold' : 'theme-text-sub'}">
-              ${canCookNow ? '<i class="fa-solid fa-circle-check mr-1"></i>Armable ya' : 'Te faltan ingredientes'}
-            </span>
-            <button type="button" onclick="openRecipeModal('${recipe.id}')" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-xs active:scale-95">
-              <span>Ver porciones</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </button>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-    }
-
-    function renderWeeklyCards() {
-      const container = document.getElementById('week-cards-grid');
-      if (!container) return;
-      container.innerHTML = '';
-
-      let gymDays = 0;
-      let restDays = 0;
-
-      weeklyPlan.forEach((day, index) => {
-        if (day.type === 'gym') gymDays++;
-        else restDays++;
-
-        const lunch = RECIPES.find(r => r.id === day.lunch) || RECIPES[0];
-        const dinner = RECIPES.find(r => r.id === day.dinner) || RECIPES[4];
-
-        const card = document.createElement('div');
-        card.className = "theme-card border theme-border rounded-2xl p-4 flex flex-col justify-between shadow-xs transition hover:border-emerald-500/50";
-        
-        card.innerHTML = `
-          <div class="space-y-3">
-            <div class="flex items-center justify-between pb-2.5 border-b theme-border">
-              <span class="font-extrabold text-sm theme-text theme-heading-font">${day.dayName}</span>
-              <button type="button" onclick="toggleDayType(${index})" class="text-[10px] font-bold px-2 py-1 rounded-lg transition flex items-center gap-1 active:scale-95 ${
-                day.type === 'gym' 
-                  ? 'bg-emerald-500/15 text-emerald-600 border border-emerald-500/25' 
-                  : 'bg-teal-500/15 text-teal-600 border border-teal-500/25'
-              }">
-                <i class="fa-solid ${day.type === 'gym' ? 'fa-dumbbell' : 'fa-bed'}"></i>
-                <span>${day.type === 'gym' ? 'Día Gym' : 'Descanso'}</span>
-              </button>
-            </div>
-
-            <!-- Lunch Slot -->
-            <div class="theme-surface p-2.5 rounded-xl border theme-border space-y-1.5">
-              <div class="flex items-center justify-between text-[11px]">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600">
-                  <i class="fa-solid fa-sun mr-1"></i> Comida
-                </span>
-                <span class="font-bold text-emerald-600">${lunch.protein}</span>
-              </div>
-              <p class="text-xs font-bold theme-text truncate cursor-pointer hover:text-emerald-600 transition" onclick="openRecipeModal('${lunch.id}')" title="Ver receta y porciones">
-                ${lunch.title}
-              </p>
-              
-              <div class="flex flex-wrap gap-1 text-[10px]">
-                <span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 font-semibold">🍗 ${lunch.portions.protein} prot</span>
-                <span class="px-1.5 py-0.5 rounded bg-teal-500/10 text-teal-600 font-semibold">🍚 ${lunch.portions.carb} carb</span>
-                <span class="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 font-semibold">🥗 ${lunch.portions.veg} verd</span>
-              </div>
-
-              <div class="flex items-center justify-between text-[10px] theme-text-sub pt-1">
-                <span>${lunch.cost}</span>
-                <button type="button" onclick="swapMealSlot(${index}, 'lunch')" class="text-emerald-600 hover:underline font-semibold active:scale-95">
-                  <i class="fa-solid fa-arrows-rotate mr-0.5"></i> Cambiar
-                </button>
-              </div>
-            </div>
-
-            <!-- Dinner Slot -->
-            <div class="theme-surface p-2.5 rounded-xl border theme-border space-y-1.5">
-              <div class="flex items-center justify-between text-[11px]">
-                <span class="text-[10px] font-bold uppercase tracking-wider text-teal-600">
-                  <i class="fa-solid fa-moon mr-1"></i> Cena
-                </span>
-                <span class="font-bold text-emerald-600">${dinner.protein}</span>
-              </div>
-              <p class="text-xs font-bold theme-text truncate cursor-pointer hover:text-emerald-600 transition" onclick="openRecipeModal('${dinner.id}')" title="Ver receta y porciones">
-                ${dinner.title}
-              </p>
-
-              <div class="flex flex-wrap gap-1 text-[10px]">
-                <span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-600 font-semibold">🍗 ${dinner.portions.protein} prot</span>
-                <span class="px-1.5 py-0.5 rounded bg-teal-500/10 text-teal-600 font-semibold">🍚 ${dinner.portions.carb} carb</span>
-                <span class="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-600 font-semibold">🥗 ${dinner.portions.veg} verd</span>
-              </div>
-
-              <div class="flex items-center justify-between text-[10px] theme-text-sub pt-1">
-                <span>${dinner.cost}</span>
-                <button type="button" onclick="swapMealSlot(${index}, 'dinner')" class="text-emerald-600 hover:underline font-semibold active:scale-95">
-                  <i class="fa-solid fa-arrows-rotate mr-0.5"></i> Cambiar
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-3 pt-2.5 border-t theme-border flex items-center justify-between text-[11px] theme-text-sub font-medium">
-            <span>Total: <strong class="theme-text">4 porciones prot.</strong></span>
-            <span class="font-mono">${day.type === 'gym' ? '🔥 Alto Combustible' : '🌿 Quema / Verde'}</span>
-          </div>
-        `;
-        container.appendChild(card);
-      });
-
-      const countGymEl = document.getElementById('week-count-gym');
-      const countRestEl = document.getElementById('week-count-rest');
-      const estCostEl = document.getElementById('week-est-cost');
-
-      if (countGymEl) countGymEl.innerText = `${gymDays} días`;
-      if (countRestEl) countRestEl.innerText = `${restDays} días`;
+    window.setGlobalLevel = function(level) {
+      CONFIG.globalLevel = level;
+      const lvlData = HYBRID_LEVELS[level];
+      document.getElementById('banner-tag').className = `inline-flex items-center px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-${lvlData.color}-500/15 text-${lvlData.color}-600 border border-${lvlData.color}-500/25`;
+      document.getElementById('banner-tag').innerHTML = `<i class="fa-solid fa-bolt mr-1.5"></i> Nivel: ${lvlData.label}`;
+      document.getElementById('banner-title').innerText = level === 'heavy' ? "Sobrecarga de Carbohidratos y Premio Muscular" : (level === 'rest' ? "Déficit Limpio y Reparación Celular" : "Balance Funcional Deportivo");
+      document.getElementById('banner-desc').innerText = lvlData.desc;
       
-      const totalEstimated = (gymDays * 60) + (restDays * 54);
-      if (estCostEl) estCostEl.innerText = `~$${totalEstimated} MXN`;
-    }
+      Object.keys(HYBRID_LEVELS).forEach(l => {
+        const btn = document.getElementById(`lvl-${l}`);
+        if(btn) btn.className = `p-2 rounded-xl border text-left transition active:scale-95 ${l === level ? `border-${HYBRID_LEVELS[l].color}-500 bg-${HYBRID_LEVELS[l].color}-500/10` : 'theme-border theme-surface hover:border-slate-400'}`;
+      });
+      window.renderMeals();
+    };
 
-    function toggleDayType(dayIndex) {
-      weeklyPlan[dayIndex].type = weeklyPlan[dayIndex].type === 'gym' ? 'rest' : 'gym';
-      const suitableMeals = RECIPES.filter(r => r.mode === weeklyPlan[dayIndex].type);
-      weeklyPlan[dayIndex].lunch = suitableMeals[0].id;
-      weeklyPlan[dayIndex].dinner = suitableMeals[1 % suitableMeals.length].id;
-      
-      renderWeeklyCards();
-      calculateShoppingList();
-      saveAppState();
-      showToast(`${weeklyPlan[dayIndex].dayName} cambiado a modo ${weeklyPlan[dayIndex].type === 'gym' ? 'Gym' : 'Descanso'}`);
-    }
-
-    function swapMealSlot(dayIndex, slot) {
-      const day = weeklyPlan[dayIndex];
-      const validRecipes = RECIPES.filter(r => r.mode === day.type);
-      const currentRecipeId = day[slot];
-      
-      let nextIndex = 0;
-      const currentIndex = validRecipes.findIndex(r => r.id === currentRecipeId);
-      if (currentIndex !== -1 && currentIndex + 1 < validRecipes.length) {
-        nextIndex = currentIndex + 1;
-      }
-      
-      day[slot] = validRecipes[nextIndex].id;
-      renderWeeklyCards();
-      calculateShoppingList();
-      saveAppState();
-      showToast(`Plato actualizado para el ${day.dayName}`);
-    }
-
-    function autoFillWeek(preset) {
-      if (preset === 'balanced') {
-        weeklyPlan = [
-          { dayName: 'Lunes', type: 'gym', lunch: 'bowl-atleta-pollo', dinner: 'skillet-papas-huevo' },
-          { dayName: 'Martes', type: 'gym', lunch: 'tacos-molida-frijol', dinner: 'avena-pro-huevo' },
-          { dayName: 'Miércoles', type: 'rest', lunch: 'pollo-fajitas-calabaza', dinner: 'ensalada-atun-nopales' },
-          { dayName: 'Jueves', type: 'gym', lunch: 'bowl-atleta-pollo', dinner: 'tacos-molida-frijol' },
-          { dayName: 'Viernes', type: 'gym', lunch: 'skillet-papas-huevo', dinner: 'bowl-atleta-pollo' },
-          { dayName: 'Sábado', type: 'rest', lunch: 'picadillo-verde-ligero', dinner: 'omelette-panela-nopales' },
-          { dayName: 'Domingo', type: 'rest', lunch: 'pollo-fajitas-calabaza', dinner: 'ensalada-atun-nopales' }
-        ];
-      }
-      renderWeeklyCards();
-      calculateShoppingList();
-      saveAppState();
-      showToast("Semana equilibrada configurada (4 Gym / 3 Descanso)");
-    }
-
-    function syncWeekToShopping() {
-      switchTab('shopping');
-      calculateShoppingList();
-      showToast("Lista de compras calculada para tu semana");
-    }
-
-    function calculateShoppingList() {
-      const selectDays = document.getElementById('prep-days');
-      const days = selectDays ? parseInt(selectDays.value, 10) : 7;
-      const container = document.getElementById('shopping-items-list');
-      if (!container) return;
-      container.innerHTML = '';
-
-      const chickenKg = (days * 0.25).toFixed(1);
-      const groundMeatKg = (days * 0.12).toFixed(1);
-      const eggsCount = days * 3;
-      const riceKg = (days * 0.08).toFixed(1);
-      const tortillasKg = (days * 0.15).toFixed(1);
-      const calabacitasKg = (days * 0.2).toFixed(1);
-      const nopalesKg = (days * 0.15).toFixed(1);
-
-      const items = [
-        { id: 'shop-chicken', name: `Pechuga o Muslo deshuesado (${chickenKg} kg)`, category: 'Proteína', estCost: `$${Math.round(days * 35)}` },
-        { id: 'shop-ground', name: `Carne molida de res magra (${groundMeatKg} kg)`, category: 'Proteína', estCost: `$${Math.round(days * 20)}` },
-        { id: 'shop-eggs', name: `Huevo entero (${eggsCount} pzas / ~1 tapa)`, category: 'Proteína/Grasa', estCost: `$${Math.round(days * 12)}` },
-        { id: 'shop-rice', name: `Arroz blanco o integral crudo (${riceKg} kg)`, category: 'Carbohidrato', estCost: `$${Math.round(days * 4)}` },
-        { id: 'shop-tortillas', name: `Tortillas de maíz de tortillería (${tortillasKg} kg)`, category: 'Carbohidrato', estCost: `$${Math.round(days * 4)}` },
-        { id: 'shop-beans', name: `Frijoles negros secos (1 bolsa de 500g)`, category: 'Carbohidrato/Fibra', estCost: '$24' },
-        { id: 'shop-squash', name: `Calabacitas tiernas (${calabacitasKg} kg)`, category: 'Verdura/Volumen', estCost: `$${Math.round(days * 6)}` },
-        { id: 'shop-nopales', name: `Nopales frescos limpios (${nopalesKg} kg)`, category: 'Verdura/Fibra', estCost: `$${Math.round(days * 5)}` },
-        { id: 'shop-veggies', name: 'Jitomate, cebolla y limones (1 kg surtido)', category: 'Sabor/Pico de gallo', estCost: '$35' }
+    window.autoFillWeek = function(preset) {
+      const plan = [
+        { dayName: 'Lunes', level: 'heavy' },
+        { dayName: 'Martes', level: 'normal' },
+        { dayName: 'Miércoles', level: 'rest' },
+        { dayName: 'Jueves', level: 'heavy' },
+        { dayName: 'Viernes', level: 'normal' },
+        { dayName: 'Sábado', level: 'cardio' },
+        { dayName: 'Domingo', level: 'rest' }
       ];
 
-      let totalMin = 0;
-      items.forEach(it => {
-        const val = parseInt(it.estCost.replace('$', ''), 10);
-        totalMin += isNaN(val) ? 20 : val;
+      weeklyPlan = plan.map(d => {
+        const pool = RECIPES.filter(r => r.modes.includes(d.level));
+        const brks = pool.filter(r => r.cat === 'breakfast');
+        const mains = pool.filter(r => r.cat === 'main');
+        const treats = RECIPES.filter(r => r.cat === 'treat' && r.modes.includes(d.level));
+        return {
+          ...d,
+          breakfast: brks.length ? brks[0].id : RECIPES[0].id,
+          lunch: mains.length ? mains[0].id : RECIPES[4].id,
+          dinner: mains.length > 1 ? mains[1].id : (mains.length ? mains[0].id : RECIPES[5].id),
+          treat: treats.length ? treats[0].id : null
+        };
+      });
+      window.renderWeek();
+      window.renderShopping();
+      window.showToast("Semana Híbrida 4x3 configurada");
+    };
 
-        const isChecked = checkedShoppingItems.has(it.id);
+    window.cycleDayLevel = function(index) {
+      const levels = ['heavy', 'normal', 'cardio', 'rest'];
+      const current = levels.indexOf(weeklyPlan[index].level);
+      const nextLevel = levels[(current + 1) % levels.length];
+      
+      weeklyPlan[index].level = nextLevel;
+      const pool = RECIPES.filter(r => r.modes.includes(nextLevel));
+      const brks = pool.filter(r => r.cat === 'breakfast');
+      const mains = pool.filter(r => r.cat === 'main');
+      const treats = RECIPES.filter(r => r.cat === 'treat' && r.modes.includes(nextLevel));
+      
+      weeklyPlan[index].breakfast = brks.length ? brks[0].id : RECIPES[0].id;
+      weeklyPlan[index].lunch = mains.length ? mains[0].id : RECIPES[4].id;
+      weeklyPlan[index].dinner = mains.length > 1 ? mains[1].id : (mains.length ? mains[0].id : RECIPES[5].id);
+      weeklyPlan[index].treat = treats.length ? treats[0].id : null;
+      
+      window.renderWeek();
+      window.renderShopping();
+    };
 
-        const row = document.createElement('div');
-        row.className = `flex items-center justify-between p-3 rounded-xl border transition cursor-pointer select-none active:scale-98 ${
-          isChecked 
-            ? 'theme-surface opacity-50 line-through theme-border' 
-            : 'theme-surface theme-border hover:border-emerald-500/50'
-        }`;
-        row.onclick = () => toggleShoppingCheck(it.id);
+    window.swapSlot = function(index, slot) {
+      const day = weeklyPlan[index];
+      let pool = RECIPES.filter(r => r.modes.includes(day.level) && r.cat === (slot === 'breakfast' ? 'breakfast' : 'main'));
+      if(!pool.length) pool = RECIPES.filter(r => r.cat === (slot==='breakfast'?'breakfast':'main'));
+      const currIdx = pool.findIndex(r => r.id === day[slot]);
+      day[slot] = pool[(currIdx + 1) % pool.length].id;
+      window.renderWeek();
+      window.renderShopping();
+    };
 
-        row.innerHTML = `
-          <div class="flex items-center gap-2.5">
-            <span class="w-4 h-4 rounded-md flex items-center justify-center text-[10px] border ${
-              isChecked ? 'bg-emerald-500 text-white border-emerald-500' : 'theme-border'
-            }">
-              ${isChecked ? '<i class="fa-solid fa-check"></i>' : ''}
-            </span>
-            <div>
-              <span class="font-bold theme-text block text-xs">${it.name}</span>
-              <span class="text-[10px] text-emerald-600 font-medium">${it.category}</span>
+    window.renderWeek = function() {
+      const container = document.getElementById('week-cards-grid');
+      container.innerHTML = '';
+      weeklyPlan.forEach((day, index) => {
+        const lvlData = HYBRID_LEVELS[day.level];
+        const brk = RECIPES.find(r=>r.id===day.breakfast);
+        const lun = RECIPES.find(r=>r.id===day.lunch);
+        const din = RECIPES.find(r=>r.id===day.dinner);
+        const trt = day.treat ? RECIPES.find(r=>r.id===day.treat) : null;
+
+        container.innerHTML += `
+          <div class="theme-card border ${day.level==='heavy'?'border-pink-500/50 ring-1 ring-pink-500/20':'theme-border'} rounded-2xl p-4 flex flex-col justify-between shadow-xs">
+            <div class="flex items-center justify-between pb-2 border-b theme-border mb-3">
+              <span class="font-extrabold text-sm theme-text theme-heading-font">${day.dayName}</span>
+              <button onclick="window.cycleDayLevel(${index})" class="text-[10px] font-bold px-2 py-1 rounded-lg bg-${lvlData.color}-500/15 text-${lvlData.color}-600 border border-${lvlData.color}-500/25 active:scale-95 transition">
+                ${lvlData.icon} Nivel: ${lvlData.label}
+              </button>
+            </div>
+            <div class="space-y-2 flex-1">
+              ${[
+                {l:'Desayuno', r:brk, s:'breakfast', c:'amber'},
+                {l:'Comida', r:lun, s:'lunch', c:'emerald'},
+                {l:'Cena', r:din, s:'dinner', c:'teal'}
+              ].map(meal => `
+                <div class="theme-surface p-2.5 rounded-xl border theme-border space-y-1 relative">
+                  <div class="flex justify-between text-[10px] font-bold text-${meal.c}-600 uppercase tracking-wider">
+                    <span>${meal.l}</span><span>${meal.r.prot} prot</span>
+                  </div>
+                  <p class="text-xs font-bold theme-text truncate cursor-pointer" onclick="window.openRecipeModal('${meal.r.id}')">${meal.r.title}</p>
+                  <div class="flex justify-between text-[10px] theme-text-sub pt-0.5">
+                    <span>🍗 ${meal.r.portions.aoa} | 🍚 ${meal.r.portions.carb} | 🥗 ${meal.r.portions.veg}</span>
+                    <button onclick="window.swapSlot(${index}, '${meal.s}')" class="text-emerald-600 hover:underline">Cambiar</button>
+                  </div>
+                </div>
+              `).join('')}
+              
+              <div class="p-2.5 rounded-xl border ${trt ? 'bg-pink-500/10 border-pink-500/30' : 'theme-surface theme-border opacity-60'}">
+                <div class="flex justify-between text-[10px] font-bold text-pink-600 uppercase tracking-wider">
+                  <span>🍨 Capricho</span><span>${trt ? trt.prot : 'Opcional'}</span>
+                </div>
+                <p class="text-xs font-bold theme-text truncate mt-1">${trt ? trt.title : 'Día sin capricho programado'}</p>
+              </div>
             </div>
           </div>
-          <span class="font-mono font-bold theme-text text-xs">${it.estCost}</span>
         `;
-        container.appendChild(row);
       });
+    };
 
-      const totalMax = Math.round(totalMin * 1.2);
-      const totalCostEl = document.getElementById('shop-total-cost');
-      const costPerMealEl = document.getElementById('shop-cost-per-meal');
-
-      if (totalCostEl) totalCostEl.innerText = `$${totalMin} - $${totalMax} MXN`;
-      if (costPerMealEl) costPerMealEl.innerText = `~$${Math.round(totalMin / (days * 2))} MXN`;
-      updateCheckedCount(items.length);
-    }
-
-    function toggleShoppingCheck(id) {
-      if (checkedShoppingItems.has(id)) checkedShoppingItems.delete(id);
-      else checkedShoppingItems.add(id);
-      calculateShoppingList();
-      saveAppState();
-    }
-
-    function updateCheckedCount(total) {
-      const countEl = document.getElementById('shop-checked-count');
-      if (countEl) countEl.innerText = `${checkedShoppingItems.size} de ${total} comprados`;
-    }
-
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        modal.classList.remove('hidden');
-        if (modalId === 'full-week-modal') renderFullWeekTable();
-      }
-    }
-
-    function closeModal(modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) modal.classList.add('hidden');
-    }
-
-    function openRecipeModal(recipeId) {
-      const recipe = RECIPES.find(r => r.id === recipeId);
-      if (!recipe) return;
-
-      const tagEl = document.getElementById('modal-tag');
-      const titleEl = document.getElementById('modal-title');
-      const descEl = document.getElementById('modal-desc');
-      const costEl = document.getElementById('modal-cost');
-      const protEl = document.getElementById('modal-protein');
-      const timeEl = document.getElementById('modal-time');
-
-      if (tagEl) tagEl.innerText = recipe.mode === 'gym' ? 'DÍA DE GIMNASIO / ALTO ENERGÉTICO' : 'DÍA DE DESCANSO / QUEMA LIMPIA';
-      if (titleEl) titleEl.innerText = recipe.title;
-      if (descEl) descEl.innerText = recipe.desc;
-      if (costEl) costEl.innerText = recipe.cost;
-      if (protEl) protEl.innerText = recipe.protein;
-      if (timeEl) timeEl.innerText = recipe.time;
-
-      const portionsGrid = document.getElementById('modal-portions-grid');
-      if (portionsGrid) {
-        portionsGrid.innerHTML = `
-          <div class="p-2 rounded-lg bg-emerald-500/10">
-            <span class="text-base block">🍗</span>
-            <span class="font-bold text-emerald-600 text-xs">${recipe.portions.protein} porciones</span>
-            <span class="text-[10px] theme-text-sub block">Palmas de proteína</span>
-          </div>
-          <div class="p-2 rounded-lg bg-teal-500/10">
-            <span class="text-base block">🍚</span>
-            <span class="font-bold text-teal-600 text-xs">${recipe.portions.carb} porciones</span>
-            <span class="text-[10px] theme-text-sub block">Puños de carbos</span>
-          </div>
-          <div class="p-2 rounded-lg bg-amber-500/10">
-            <span class="text-base block">🥗</span>
-            <span class="font-bold text-amber-600 text-xs">${recipe.portions.veg} porciones</span>
-            <span class="text-[10px] theme-text-sub block">Tazas de verdura</span>
-          </div>
-          <div class="p-2 rounded-lg bg-slate-500/10">
-            <span class="text-base block">🥑</span>
-            <span class="font-bold theme-text text-xs">${recipe.portions.fat} porción</span>
-            <span class="text-[10px] theme-text-sub block">Grasa funcional</span>
-          </div>
-        `;
-      }
-
-      const ingList = document.getElementById('modal-ingredients');
-      if (ingList) {
-        ingList.innerHTML = '';
-        recipe.ingredients.forEach(ing => {
-          const li = document.createElement('li');
-          li.innerText = ing;
-          ingList.appendChild(li);
-        });
-      }
-
-      const stepList = document.getElementById('modal-steps');
-      if (stepList) {
-        stepList.innerHTML = '';
-        recipe.steps.forEach(st => {
-          const li = document.createElement('li');
-          li.innerText = st;
-          stepList.appendChild(li);
-        });
-      }
-
-      openModal('recipe-modal');
-    }
-
-    function renderFullWeekTable() {
-      const tbody = document.getElementById('full-week-table-body');
-      if (!tbody) return;
-      tbody.innerHTML = '';
-
-      weeklyPlan.forEach(day => {
-        const lunch = RECIPES.find(r => r.id === day.lunch) || RECIPES[0];
-        const dinner = RECIPES.find(r => r.id === day.dinner) || RECIPES[4];
-
-        const tr = document.createElement('tr');
-        tr.className = "hover:bg-black/5 dark:hover:bg-white/5 transition";
-        tr.innerHTML = `
-          <td class="p-3 font-bold theme-text whitespace-nowrap">${day.dayName}</td>
-          <td class="p-3 whitespace-nowrap">
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${
-              day.type === 'gym' ? 'bg-emerald-500/15 text-emerald-600' : 'bg-teal-500/15 text-teal-600'
-            }">
-              ${day.type === 'gym' ? 'Día Gym' : 'Descanso'}
-            </span>
-          </td>
-          <td class="p-3">
-            <span class="font-bold theme-text block cursor-pointer hover:text-emerald-600" onclick="closeModal('full-week-modal'); openRecipeModal('${lunch.id}')">${lunch.title}</span>
-            <span class="text-[10px] theme-text-sub">🍗 ${lunch.portions.protein}p | 🍚 ${lunch.portions.carb}p | 🥗 ${lunch.portions.veg}p</span>
-          </td>
-          <td class="p-3">
-            <span class="font-bold theme-text block cursor-pointer hover:text-emerald-600" onclick="closeModal('full-week-modal'); openRecipeModal('${dinner.id}')">${dinner.title}</span>
-            <span class="text-[10px] theme-text-sub">🍗 ${dinner.portions.protein}p | 🍚 ${dinner.portions.carb}p | 🥗 ${dinner.portions.veg}p</span>
-          </td>
-          <td class="p-3 text-center font-bold text-emerald-600 whitespace-nowrap">
-            ${lunch.portions.protein + dinner.portions.protein} porciones (~70-80g)
-          </td>
-        `;
-        tbody.appendChild(tr);
+    window.renderPantry = function() {
+      ['proteins', 'carbs', 'greens', 'treats'].forEach(type => {
+        const cont = document.getElementById(`pantry-${type}`);
+        if(cont) cont.innerHTML = PANTRY.filter(p=>p.type===type).map(item => {
+          const active = userPantry.has(item.id);
+          return `
+            <button onclick="window.togglePantry('${item.id}')" class="p-2.5 rounded-xl border text-left flex items-center gap-2 text-xs transition ${active?'theme-surface border-emerald-500':'theme-card theme-border'}">
+              <span class="w-6 h-6 rounded flex items-center justify-center ${active?'bg-emerald-500/20 text-emerald-600':'bg-black/5 text-slate-400'}"><i class="fa-solid ${item.icon}"></i></span>
+              <span class="font-bold theme-text truncate flex-1">${item.label}</span>
+              <i class="fa-solid fa-check ${active?'text-emerald-500':'text-transparent'}"></i>
+            </button>
+          `;
+        }).join('');
       });
-    }
+    };
 
-    function askMealPrepAI() {
-      const input = document.getElementById('ai-user-prompt');
-      const btn = document.getElementById('btn-ai-generate');
-      const responseArea = document.getElementById('ai-response-area');
-      const resultContent = document.getElementById('ai-result-content');
-      const statusLabel = document.getElementById('ai-status');
+    window.togglePantry = function(id) {
+      userPantry.has(id) ? userPantry.delete(id) : userPantry.add(id);
+      window.renderPantry();
+      window.renderMeals();
+    };
 
-      if (!input || !btn) return;
-      const userText = input.value.trim();
-      if (!userText) {
-        input.focus();
-        return;
-      }
+    window.selectAllIngredients = function(force) {
+      userPantry = force ? new Set(PANTRY.map(p=>p.id)) : new Set();
+      window.renderPantry();
+      window.renderMeals();
+    };
 
-      btn.disabled = true;
-      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Calculando porciones...`;
-      if (responseArea) responseArea.classList.remove('hidden');
-      if (statusLabel) statusLabel.innerText = "Calculando porciones exactas";
+    window.renderMeals = function() {
+      const cont = document.getElementById('meals-container');
+      if(!cont) return;
+      const list = RECIPES.filter(r => r.modes.includes(CONFIG.globalLevel) || r.cat === 'treat');
+      cont.innerHTML = list.map(recipe => {
+        const match = recipe.req.filter(id => userPantry.has(id)).length;
+        const total = recipe.req.length;
+        const canCook = total > 0 && (match/total) >= 0.5;
+        return `
+          <div class="rounded-2xl p-4 border theme-card theme-border flex flex-col justify-between ${canCook?'':'opacity-50'}">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${recipe.cat==='treat'?'bg-pink-500/15 text-pink-600':'bg-emerald-500/15 text-emerald-600'}">${recipe.cat==='treat'?'Capricho':(recipe.cat==='breakfast'?'Desayuno':'Plato Fuerte')}</span>
+                <span class="text-xs font-mono font-bold text-emerald-600">${recipe.cost}</span>
+              </div>
+              <h4 class="font-bold theme-text text-sm theme-heading-font mb-1">${recipe.title}</h4>
+              <p class="text-[11px] theme-text-sub line-clamp-2">${recipe.desc}</p>
+            </div>
+            <div class="mt-3 pt-3 border-t theme-border flex justify-between items-center text-[11px]">
+               <span class="theme-text font-bold">🍗 ${recipe.portions.aoa} | 🍚 ${recipe.portions.carb} | 🥗 ${recipe.portions.veg}</span>
+               <button onclick="window.openRecipeModal('${recipe.id}')" class="text-emerald-600 font-bold hover:underline">Detalles</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    };
 
+    window.renderShopping = function() {
+      const cont = document.getElementById('shopping-items-list');
+      if(!cont) return;
+      // Static mock values mapping hybrid week logic for demonstration
+      const items = [
+        { name: 'Pechuga / Carne Magra (1.4 kg)', cat: 'Proteína Base' },
+        { name: 'Huevos frescos (24 pzas)', cat: 'Desayunos' },
+        { name: 'Avena y Arroz (500g c/u)', cat: 'Carbos Híbridos' },
+        { name: 'Leche Almendras (2 L)', cat: 'Caprichos y Avena' },
+        { name: 'Cacao puro y Plátanos', cat: 'Post-Gym' },
+        { name: 'Calabazas, Nopales (1.5 kg)', cat: 'Volumen Descanso' }
+      ];
+      cont.innerHTML = items.map(it => `
+        <div class="p-3 rounded-xl border theme-surface theme-border flex justify-between items-center cursor-pointer active:scale-95 hover:border-emerald-500 transition">
+           <div><div class="font-bold theme-text text-xs">${it.name}</div><div class="text-[10px] text-emerald-600">${it.cat}</div></div>
+           <i class="fa-regular fa-square text-slate-400"></i>
+        </div>
+      `).join('');
+    };
+
+    window.openModal = function(id) { document.getElementById(id).classList.remove('hidden'); };
+    window.closeModal = function(id) { document.getElementById(id).classList.add('hidden'); };
+    
+    window.openRecipeModal = function(id) {
+      const r = RECIPES.find(x=>x.id===id);
+      if(!r) return;
+      document.getElementById('modal-content').innerHTML = `
+        <h3 class="text-lg font-bold theme-text theme-heading-font">${r.title}</h3>
+        <p class="text-xs theme-text-sub">${r.desc}</p>
+        <div class="bg-emerald-500/10 p-3 rounded-xl border border-emerald-500/20 text-xs">
+          <strong class="text-emerald-700 block mb-1">Porciones aportadas:</strong>
+          🍗 ${r.portions.aoa} Origen Animal <br>
+          🍚 ${r.portions.carb} Cereales <br>
+          🥗 ${r.portions.veg} Verduras <br>
+          🥑 ${r.portions.fat} Grasas
+        </div>
+        <p class="text-xs theme-text-sub"><em>(Requiere: ${r.req.map(i => PANTRY.find(p=>p.id===i)?.label).join(', ')})</em></p>
+      `;
+      window.openModal('recipe-modal');
+    };
+
+    window.simularAI = function() {
+      const input = document.getElementById('ai-prompt').value;
+      if(!input) return;
+      const resp = document.getElementById('ai-response');
+      resp.classList.remove('hidden');
+      resp.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> Adaptando "${input}" al Sistema Híbrido...`;
       setTimeout(() => {
-        if (resultContent) {
-          resultContent.innerText = `🍳 Opción Sugerida: "Sartén Rápido de Recomposición"
-• Porciones conscientes calculadas:
-  🍗 Proteína: 2 porciones (palmas)
-  ${currentMode === 'gym' ? '🍚 Carbohidratos: 2 porciones (puños con arroz o tortillas)' : '🥗 Verduras: 3 porciones (tazas de calabacita o nopales)'}
-  🥑 Grasas: 1 porción controlada
-• Costo aprox: ~$26 MXN
-• Proteína estimada: ~35g
+        resp.innerHTML = `<strong>Opción Adaptada para tu Meta:</strong><br><br>• Hemos descompuesto "${input}" en equivalentes limpios.<br>• Usa 4 porciones de tu proteína base.<br>• Si hoy es <strong>Día Pesado</strong>, acompáñalo con 3 porciones de maíz/arroz.<br>• Si es <strong>Día Descanso</strong>, sustituye el almidón por cama de nopal o calabaza.<br>• Costo calórico neutralizado.`;
+      }, 600);
+    };
 
-Ingredientes adaptados a lo que tienes ("${userText}"):
-- Tu base proteica disponible (huevo, pollo o atún).
-- Vegetales salteados en cubitos (calabacitas, jitomate o nopales con sal y ajo en polvo).
-- Toque de condimento: orégano seco, comino o limón.
-
-Pasos de ensamblaje (3 minutos):
-1. Saltea los vegetales picados a fuego vivo durante 2 minutos.
-2. Agrega la proteína para que absorba todo el jugo y sabor.
-3. ${currentMode === 'gym' ? 'Sírvelo sobre tus tortillas o arroz caliente.' : 'Sírvelo en plato hondo abundante con unas gotas de salsa casera.'}`;
-        }
-        
-        btn.disabled = false;
-        btn.innerHTML = `<i class="fa-solid fa-bolt"></i> Crear Opción`;
-        showToast("Receta adaptada y porciones calculadas");
-      }, 400);
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const text = document.getElementById('toast-text');
-      if (!toast || !text) return;
-      text.innerText = message;
-      toast.classList.remove('translate-y-16', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
+    window.showToast = function(msg) {
+      const el = document.getElementById('toast');
+      document.getElementById('toast-text').innerText = msg;
+      el.classList.replace('translate-y-16', 'translate-y-0');
+      el.classList.replace('opacity-0', 'opacity-100');
       setTimeout(() => {
-        toast.classList.add('translate-y-16', 'opacity-0');
-        toast.classList.remove('translate-y-0', 'opacity-100');
+        el.classList.replace('translate-y-0', 'translate-y-16');
+        el.classList.replace('opacity-100', 'opacity-0');
       }, 2500);
-    }
-
-    window.setTheme = setTheme;
-    window.setDayMode = setDayMode;
-    window.switchTab = switchTab;
-    window.togglePantryItem = togglePantryItem;
-    window.selectAllIngredients = selectAllIngredients;
-    window.toggleDayType = toggleDayType;
-    window.swapMealSlot = swapMealSlot;
-    window.autoFillWeek = autoFillWeek;
-    window.syncWeekToShopping = syncWeekToShopping;
-    window.openModal = openModal;
-    window.closeModal = closeModal;
-    window.openRecipeModal = openRecipeModal;
-    window.calculateShoppingList = calculateShoppingList;
-    window.toggleShoppingCheck = toggleShoppingCheck;
-    window.askMealPrepAI = askMealPrepAI;
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeModal('recipe-modal');
-        closeModal('full-week-modal');
-        closeModal('tutorial-modal');
-      }
-    });
+    };
 
     document.addEventListener('DOMContentLoaded', () => {
       try {
-        initPantry();
-      } catch (err) {
-        console.error('Initialization error:', err);
-      }
+        window.setTheme('kitchen');
+        window.setGlobalLevel('heavy');
+        window.autoFillWeek('hybrid');
+        window.renderPantry();
+        window.renderShopping();
+      } catch(e) { console.error("Init Error", e); }
     });
-
-    window.onload = function() {
-      try {
-        initPantry();
-      } catch (e) {
-        console.error('Window onload fallback error:', e);
-      }
-    };
   </script>
 </body>
 </html>
